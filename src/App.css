@@ -1,38 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Raleway:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* GENERAL */
+
 .App {
-  text-align: center;
+    /* gradient? */
+  font-family: 'Raleway', sans-serif;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.city-name {
+  font-family: 'Dancing Script', cursive;
+  color: #EE9173;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button {
+  /* gradient? */
+  color: #31AEC6;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card {
+  background-color: #79C858;
 }
 
-.App-link {
-  color: #61dafb;
+.tags {
+  color: #EAE7E8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tags:active {
+  color: #F0C55D;
 }
+
+.upvote {
+  color: #EAE7E8;
+}
+
+.upvote:active {
+  color: #A8E575;
+}
+
+.downvote {
+  color: #EAE7E8;
+}
+
+.downvote:active {
+  color: #EEA891;
+}
+
