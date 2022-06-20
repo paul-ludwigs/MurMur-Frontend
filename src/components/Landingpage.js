@@ -24,11 +24,11 @@ const Landingpage = () => {
         </div>
 
         {/* Form */}
-        <div class="mb-3 row mt-3">
+        <div className="mb-3 row mt-3">
           <label for="staticEmail" className="col-sm-2 col-form-label">
             Email
           </label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <input
               type="text"
               className="form-control"
@@ -37,11 +37,11 @@ const Landingpage = () => {
             />
           </div>
         </div>
-        <div class="mb-3 row">
+        <div className="mb-3 row">
           <label for="inputPassword" className="col-sm-2 col-form-label">
             Password
           </label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <input
               type="password"
               className="form-control"
