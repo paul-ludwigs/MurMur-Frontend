@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Routes } from 'react-router-dom';
 import Navbar from "./components/Navbar";
-import LandingPage from "./components/Landingpage";
+import Landingpage from "./components/Landingpage";
 import Register from "./components/Register";
 import Search from "./components/Search";
 import Create from "./components/Create";
@@ -17,13 +17,13 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path={"/"} element={<LandingPage />} />
+          <Route path={"/"} element={<Landingpage />} />
           <Route path={"/register"} element={<Register />} />
           <Route path={"/search"} element={<Search />} />
           <Route path={"/create"} element={<Create />} />
           <Route path={"/search/:cityname"} element={<Overview />} />
           <Route path={"/:cityname/:id"} element={<Detail />} />
-          <Route path={"/profile"} element={<Profile />} />
+          <Route path={"/profile"} element={<Profile />} />   
         </Routes>
       </main>
     </div>

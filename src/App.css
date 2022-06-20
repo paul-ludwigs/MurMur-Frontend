@@ -2,6 +2,15 @@
 
 /* GENERAL */
 
+.image{
+  width:250px;
+  height:250px;
+  margin:auto;
+  margin-top: 25px;
+}
+
+
+
 .App {
     /* gradient? */
   font-family: 'Raleway', sans-serif;
@@ -18,7 +27,7 @@
   color: #31AEC6;
 }
 
-.card {
+.card-city {
   background-color: #79C858;
 }
 
