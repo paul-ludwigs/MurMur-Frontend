@@ -46,3 +46,15 @@
   color: #EEA891;
 }
 
+/* NAVBAR */
+.navbar {
+  background-color: #31AEC6;
+}
+.navbar {
+  padding: 1rem;
+}
+.navbar-brand {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
