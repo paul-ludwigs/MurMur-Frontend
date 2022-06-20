@@ -1,5 +1,8 @@
+import {Link} from "react-router-dom";
+
 const Landingpage = () => {
   return (
+    
     <>
       <div className="container mx-auto text-center mt-5">
         <p className="card-text">
@@ -53,9 +56,9 @@ const Landingpage = () => {
             Sign-In
           </button>
           <div>
-            <a href="/register" className="text-warning stretched-link">
+            <Link to="/register">
               Register
-            </a>
+            </Link>
           </div>
         </div>
       </div>
