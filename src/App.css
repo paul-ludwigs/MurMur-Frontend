@@ -1,6 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Raleway:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
 /* GENERAL */
 
 .App {
-  
+    /* gradient? */
+  font-family: 'Raleway', sans-serif;
+  color: #333;
+}
+
+.city-name {
+  font-family: 'Dancing Script', cursive;
+  color: #EE9173;
+}
+
+.button {
+  /* gradient? */
+  color: #31AEC6;
+}
+
+.card {
+  background-color: #79C858;
+}
+
+.tags {
+  color: #EAE7E8;
+}
+
+.tags:active {
+  color: #F0C55D;
+}
+
+.upvote {
+  color: #EAE7E8;
+}
+
+.upvote:active {
+  color: #A8E575;
+}
+
+.downvote {
+  color: #EAE7E8;
+}
+
+.downvote:active {
+  color: #EEA891;
 }
 
