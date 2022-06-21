@@ -1,19 +1,54 @@
 import React from 'react'
 
 function Create() {
+  const handleSubmit = function (event) {
+    event.preventDefault()
+    console.log(event.target)
+    const cityName = event.target[0].value;
+    const tip = event.target[7].value;
+
+    const btnArray = [
+      { name: "Food+Drink",
+        boolean: event.target[1].ariaPressed},
+        { name: "Location",
+        boolean: event.target[2].ariaPressed},
+        { name: "Sport+Activity",
+        boolean: event.target[3].ariaPressed},
+        { name: "Event",
+        boolean: event.target[4].ariaPressed},
+        { name: "General",
+        boolean: event.target[5].ariaPressed},
+        { name: "Warning",
+        boolean: event.target[6].ariaPressed}
+    ];
+
+    btnArray.map(item => {
+      if(item.boolean === "true"){
+        console.log(item.name)
+      }
+    })
+
+
+  }
+
+
+
+
+
+
   return (
     <>
       <div className="text-center mb-3">
        <h1>Create a new MurMur!</h1>
        <h2>We are eager to hear about what you want to share!</h2>
      </div>
-      <form>
+      <form onSubmit={handleSubmit}>
 
         <div className="text-center container mb-3 mx-auto">
           <label htmlFor="exampleFormControlInput1" className="form-label">
             City
           </label>
-          <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Tokyo" />
+          <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Tokyo" />
         </div>
 
         <div className="container mx-auto text-center mt-3">          
