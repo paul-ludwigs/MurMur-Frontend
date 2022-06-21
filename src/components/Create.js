@@ -1,14 +1,19 @@
-import React from 'react'
+import React from 'react';
+import axios from "axios";
 
 function Create() {
+  const api = process.env.REACT_APP_API;
+
   const handleSubmit = function (event) {
     event.preventDefault()
-    console.log(event.target)
+
+    // find cityname and tip:
     const cityName = event.target[0].value;
     const tip = event.target[7].value;
 
+    // organize data of toggle buttons:
     const btnArray = [
-      { name: "Food+Drink",
+        { name: "Food+Drink",
         boolean: event.target[1].ariaPressed},
         { name: "Location",
         boolean: event.target[2].ariaPressed},
@@ -22,14 +27,35 @@ function Create() {
         boolean: event.target[6].ariaPressed}
     ];
 
+    // push only toggled tag-names into array for the post request:
+    let postArray = [];
+
     btnArray.map(item => {
       if(item.boolean === "true"){
-        console.log(item.name)
+        postArray.push(item.name);
       }
-    })
+    });
 
+    // find current date:    
+    const today = new Date().toLocaleDateString()
 
-  }
+    // enforce at least one tag is toggled and both input fields are filled out, then post request:
+    if(postArray.length == 0 || !cityName || !tip){
+      alert("Please fill out all Forms and select at least one Tag!")
+    } else {
+      const newMurmur = {
+        user_id:  "",
+        city: cityName,
+        tip: tip,
+        picture: "",
+        address: "",
+        date: today,
+        tags: postArray
+    };
+      axios.post(`${api}/Murmur`, newMurmur);
+    };
+
+  };
 
 
 
