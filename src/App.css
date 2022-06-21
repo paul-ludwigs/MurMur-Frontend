@@ -71,5 +71,7 @@
 /* CREATE */
 
 .crbutton {
-  color: #EEA891;
+  color: #31AEC6;
+  min-width: 30%;
+  border-radius: 20px;
 }
