@@ -75,3 +75,11 @@ input[type="file"] {
   font-weight: 700;
   font-size: 2rem;
 }
+
+/* CREATE */
+
+.crbutton {
+  color: #31AEC6;
+  min-width: 30%;
+  border-radius: 20px;
+}
