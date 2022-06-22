@@ -1,7 +1,20 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
+  const { isAuthenticated, setIsAuthenticated } =
+    useContext(AuthContext);
+  let navigate = useNavigate();
+
+  const handleClick = () => {    
+    setIsAuthenticated(false);
+    localStorage.removeItem("token");
+    navigate(`/`);
+  };
+
   return (
 <nav className="navbar navbar-expand-lg">
   <div className="container-fluid">
@@ -21,7 +34,7 @@ function Navbar() {
         <NavLink to="/profile"><a className="nav-link" aria-current="page">Profile</a></NavLink>
         </li>
         <li className="nav-item">
-        <a className="nav-link" aria-current="page">Logout</a>
+        <a onClick={handleClick} className="nav-link" aria-current="page">Logout</a>
         </li>
       </ul>
     </div>
