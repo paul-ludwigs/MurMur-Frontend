@@ -30,6 +30,16 @@ input[type="file"] {
 .city-name {
   font-family: 'Dancing Script', cursive;
   color: #EE9173;
+  font-size: 5rem;
+  text-align: center;
+  margin: 2rem;
+}
+
+.container-test {
+  background-color: greenyellow;
+}
+.testing {
+  background-color: red;
 }
 
 .button {
@@ -82,4 +92,11 @@ input[type="file"] {
   color: #31AEC6;
   min-width: 30%;
   border-radius: 20px;
+}
+
+/* DETAIL */
+.murmur-text {
+  min-height: 10rem;
+  border: 1px solid #333;
+  background-color: beige;
 }
