@@ -1,10 +1,16 @@
 import React from 'react';
 import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { Navigate } from "react-router-dom";
 
 function Register() {
-  const api = process.env.REACT_APP_API;
+  const api = process.env.REACT_APP_API_URL;
 
-  const handleSubmit = function (event) {
+  const { isAuthenticated, setIsAuthenticated } =
+    useContext(AuthContext);
+
+  const handleSubmit = async function (event) {
     event.preventDefault()
     const accountName = event.target[0].value;
     const email = event.target[1].value;
@@ -15,15 +21,28 @@ function Register() {
       alert("Please fill out all forms!")
     } else if(password !== repeatPassword){
       alert("Your passwords don't match!")
-    } else {
+    } else {      
       const newUser = {
         username: accountName,
         email: email,
-        password: password
+        password: password,
+        picture: ""
       };
-      axios.post(`${api}/users`, newUser);
+
+      try {
+        const res = await axios.post(
+          `${process.env.REACT_APP_API_URL}/users/register`, newUser);
+        const token = res.headers.authorization;
+        localStorage.setItem("token", token);
+        setIsAuthenticated(true);
+       } catch (error) {
+        console.log(error);
+       }
     };
-  }
+  };
+
+  //if (isAuthenticated) return <Navigate to="../search" />;
+
   return (
     <>
     <div className="text-center">

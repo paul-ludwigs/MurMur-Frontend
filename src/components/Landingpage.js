@@ -1,6 +1,43 @@
 import {Link} from "react-router-dom";
+import axios from "axios";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { Navigate } from "react-router-dom";
 
 const Landingpage = () => {
+  const api = process.env.REACT_APP_API_URL;
+  const { isAuthenticated, setIsAuthenticated } =
+    useContext(AuthContext);
+
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+
+      const email = e.target[0].value;
+      const password = e.target[1].value;
+      const loginData = {
+       email: email,
+       password: password,
+      };
+      if(!email || !password){
+        alert("Please fill out all forms!")
+      } else {
+          try {
+            const res = await axios.post(
+              `${api}/users/login`,
+              loginData
+            );
+            const token = res.headers.authorization;        
+            localStorage.setItem("token", token);
+            setIsAuthenticated(true);
+          } catch (error) {
+            console.log(error);
+          }
+         }
+    };
+
+    //if (isAuthenticated === true) return <Navigate to="../search" />;
+
   return (
 
     <>
@@ -24,14 +61,14 @@ const Landingpage = () => {
         </div>
 
         {/* Form */}
-        <form>
+        <form onSubmit={handleSubmit}>
         <div className="mb-3 row mt-3">
           <label htmlFor="staticEmail" className="col-sm-2 col-form-label">
             Email
           </label>
           <div className="col-sm-10">
             <input
-              type="text"
+              type="email"
               className="form-control"
               id="staticEmail"
               placeholder="email@example.com"
@@ -50,18 +87,16 @@ const Landingpage = () => {
             />
           </div>
         </div>
+          <button type="submit" className="btn btn-info mb-3 mt-5">
+            Sign-In
+          </button>
         </form>
 
         {/* Button/Link */}
         <div className="text-center">
-          <button type="button" className="btn btn-info mb-3 mt-5">
-            Sign-In
-          </button>
-          <div>
-            <Link to="/register">
+          <Link to="/register">
               Register
-            </Link>
-          </div>
+          </Link>         
         </div>
       </div>
     </>
