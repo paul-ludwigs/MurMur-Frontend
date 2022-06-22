@@ -35,13 +35,6 @@ input[type="file"] {
   margin: 2rem;
 }
 
-.container-test {
-  background-color: greenyellow;
-}
-.testing {
-  background-color: red;
-}
-
 .button {
   /* gradient? */
   color: #31AEC6;
@@ -101,8 +94,25 @@ input[type="file"] {
   background-color: beige;
 }
 
-.test-button {
+.vote-button {
   color: gray;
   font-size: 2rem;
   padding-right: .1em;
+}
+.upvote-button {
+  color: green;
+}
+.downvote-button {
+  color: red;
+}
+.detail-tag {
+  background-color: #EE9173;
+  margin: .2rem;
+  margin-top: .5rem;
+  text-align: center;
+  border-radius: 2rem;
+  font-weight: 700;  
+}
+.detail-tag-text {
+  margin: 0;
 }
