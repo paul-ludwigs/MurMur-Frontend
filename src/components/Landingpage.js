@@ -5,7 +5,7 @@ import { AuthContext } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
 
 const Landingpage = () => {
-
+  const api = process.env.REACT_APP_API_URL;
   const { isAuthenticated, setIsAuthenticated } =
     useContext(AuthContext);
 
