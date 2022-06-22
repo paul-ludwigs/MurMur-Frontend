@@ -23,7 +23,7 @@ const AuthState = ({ children }) => {
         }
       } else {
        // set this to false in order to activate authentication!!!
-        setIsAuthenticated(true);
+        setIsAuthenticated(false);
       }
     };
     checkIfTokenValid();
