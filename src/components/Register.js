@@ -41,7 +41,7 @@ function Register() {
     };
   };
 
-  //if (isAuthenticated) return <Navigate to="../search" />;
+  if (isAuthenticated) return <Navigate to="../search" />;
 
   return (
     <>

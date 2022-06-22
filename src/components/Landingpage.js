@@ -36,7 +36,7 @@ const Landingpage = () => {
          }
     };
 
-    //if (isAuthenticated === true) return <Navigate to="../search" />;
+    if (isAuthenticated === true) return <Navigate to="../search" />;
 
   return (
 
