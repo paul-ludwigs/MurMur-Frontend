@@ -24,7 +24,7 @@ const Landingpage = () => {
       } else {
           try {
             const res = await axios.post(
-              `${process.env.REACT_APP_API_URL}/users/login`,
+              `${api}/users/login`,
               loginData
             );
             const token = res.headers.authorization;        
