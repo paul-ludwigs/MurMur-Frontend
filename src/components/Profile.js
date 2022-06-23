@@ -5,6 +5,7 @@ import { AuthContext } from "../context/AuthContext";
 function Profile() {
   const [userName, setUserName] = useState("Max");
   const [eMail, setEMail] = useState("Username@email.com");
+  const [picture, setPicture] = useState(require("../images/profilepic.JPG"))
   const api = process.env.REACT_APP_API_URL;
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
 
@@ -22,6 +23,7 @@ function Profile() {
             setIsAuthenticated(true);
             setUserName(res.data.username)
             setEMail(res.data.email)
+            setPicture(res.data.picture)
             console.log(res)
           }
         } catch (error) {
@@ -43,11 +45,12 @@ function Profile() {
     <>
       <div className="card-body text-center mt-5">
         <img
-          src={require("../images/profilepic.JPG")}
+          src={picture}
           alt="profilepic"
           className="rounded-circle img-fluid"
           style={{ width: "150px" }}
         />
+        
         <div className="container mx-auto text-center mt-5">
           <label htmlFor="file-upload" className="custom-file-upload">
             Add picture
