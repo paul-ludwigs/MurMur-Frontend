@@ -6,43 +6,92 @@ import { useEffect, useState } from "react";
 function Overview() {
 const api = process.env.REACT_APP_API_URL;
 const { cityname } = useParams();
+
+// capitalize the first letter of the cityname:
 const citynameCap = cityname.charAt(0).toUpperCase() + cityname.slice(1);
 
+const [ data, setData ] = useState([]);
 const [ filter, setFilter ] = useState([]);
+const [ filteredData, setFilteredData ] = useState([]);
 
 useEffect(() => {
+
+  if(data.length <= 0){
   axios.get(`${api}/murmur/${cityname}`)
-  .then((data) => console.log(data))
+  .then((data) => {
+    setData(data.data);
+    setFilteredData(data.data)
+  })
   .catch((error) => console.log(error));
+}
+
+// zeige nur was passende filter tags hat:
 
 }, []);
+
+console.log(filteredData)
+//console.log(data.data);
+let murmur = filteredData;
+//console.log(murmur);
+
+
+
+// button pushes or splices its name into/from array:
+const handleClick = function (event) {
+  
+  if(filter.includes(event.target.innerText)){
+       const index = filter.findIndex(element => element == event.target.innerText);    
+       filter.splice(index, 1);  
+     } else {    
+         filter.push(event.target.innerText);
+       };
+       console.log(filter)
+  
+}
+
+
+
+
 
   return (
     <>
     <div className="text-center city-name"><h1>{citynameCap}</h1></div>
 
     <div className="container mx-auto text-center mt-3">          
-          <button type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1 active" data-bs-toggle="button" autocomplete="off" aria-pressed="true">
+          <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
             Food+Drink
           </button>
-          <button type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
+          <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
             Location
           </button>
-          <button type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
+          <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
             Sport+Activity
           </button>
         </div>
         <div className="container mx-auto text-center mt-1  mb-2">          
-          <button type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1 active" data-bs-toggle="button" autocomplete="off" aria-pressed="true">
+          <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
             Event
           </button>
-          <button type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
+          <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
             General
           </button>
-          <button type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
+          <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
             Warning
           </button>
         </div>
+
+        
+        {murmur.length >= 0 ? (
+          murmur.map((item) => (
+            
+        <div>hallo</div>
+        
+      ))) : (
+      <div> Loading MurMurs, please wait... </div>
+      )}
+
+
+
       </>
 
 
