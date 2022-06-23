@@ -1,14 +1,44 @@
 import React from "react";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
+import { AuthContext } from "../context/AuthContext";
 function Profile() {
   const [userName, setUserName] = useState("Max");
   const [eMail, setEMail] = useState("Username@email.com");
+  const api = process.env.REACT_APP_API_URL;
+  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
 
-  const clickHandler = () => {
-    // put request 
-    // über setUserName & serEMail können die Daten geändert werden
-  };
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    console.log(token)
+    const checkIfTokenValid = async () => {
+      if (token) {
+        try {
+          const res = await axios.get(
+            `${api}/protected/me`,
+            { headers: { token: token } }
+          );
+          if (res.status === 200) {
+            setIsAuthenticated(true);
+            setUserName(res.data.username)
+            setEMail(res.data.email)
+            console.log(res)
+          }
+        } catch (error) {
+          console.log(error);
+          
+        }
+      } else {
+        setIsAuthenticated(false);
+      }
+      
+    };
+    checkIfTokenValid();
+    
+  }, []);
+
+  
+
   return (
     <>
       <div className="card-body text-center mt-5">
@@ -29,7 +59,7 @@ function Profile() {
           <br />
           <input className="my-3" value={eMail} />
           <br />
-          <button type="button" className="btn" onClick={clickHandler}>
+          <button type="button" className="btn">
             Edit profile
           </button>
         </form>
