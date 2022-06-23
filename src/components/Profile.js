@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 function Profile() {
-  const [userName, setUserName] = useState("Max");
+  const [userName, setUserName] = useState("Accountname");
   const [eMail, setEMail] = useState("Username@email.com");
   const [picture, setPicture] = useState(require("../images/profilepic.JPG"))
   const api = process.env.REACT_APP_API_URL;

@@ -1,8 +1,42 @@
 import React from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import { useState, useContext, useEffect } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 function Search() {
+  const [userName, setUserName] = useState("Accountname");
+
+  const api = process.env.REACT_APP_API_URL;
+  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    console.log(token)
+    const checkIfTokenValid = async () => {
+      if (token) {
+        try {
+          const res = await axios.get(
+            `${api}/protected/me`,
+            { headers: { token: token } }
+          );
+          if (res.status === 200) {
+            setIsAuthenticated(true);
+            setUserName(res.data.username)
+            console.log(res)
+          }
+        } catch (error) {
+          console.log(error);
+          
+        }
+      } else {
+        setIsAuthenticated(false);
+      }
+      
+    };
+    checkIfTokenValid();
+
+  }, []);
 
   let navigate = useNavigate();
 
@@ -18,7 +52,7 @@ function Search() {
   return (
     <>
       <div className="container mx-auto text-center mt-5">
-        <h1>Hi User,</h1>
+        <h1>Hi {userName},</h1>
         <p>
           Search the name of the city where you want to go or where you are.
           Citysearch helps you to find useful information about your
