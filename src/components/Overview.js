@@ -14,6 +14,8 @@ const [ data, setData ] = useState([]);
 const [ filter, setFilter ] = useState([]);
 const [ filteredData, setFilteredData ] = useState([]);
 
+
+
 useEffect(() => {
 
   if(data.length <= 0){
@@ -79,21 +81,30 @@ const handleClick = function (event) {
             Warning
           </button>
         </div>
+        <br/>
 
         
         {murmur.length >= 0 ? (
           murmur.map((item) => (
-            
+            <div className="container">
             <div className="card" style={{width: "18rem;"}}>
+              
+                <p className="float-left">{item.tags}</p>
+                
+                <p className="float-right">{item.upvotes.length}</p>
+                
             <img src={item.picture} className="card-img-top" alt="city_picture"/>
             <div className="card-body">
               <p className="card-text">{item.tip}</p>
             </div>
           </div>
+          </div>
+          
         
       ))) : (
       <div> Loading MurMurs, please wait... </div>
       )}
+      
 
 
 
