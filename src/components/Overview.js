@@ -32,7 +32,7 @@ useEffect(() => {
 console.log(filteredData)
 //console.log(data.data);
 let murmur = filteredData;
-//console.log(murmur);
+console.log(murmur);
 
 
 
@@ -84,7 +84,12 @@ const handleClick = function (event) {
         {murmur.length >= 0 ? (
           murmur.map((item) => (
             
-        <div>hallo</div>
+            <div className="card" style={{width: "18rem;"}}>
+            <img src={item.picture} className="card-img-top" alt="city_picture"/>
+            <div className="card-body">
+              <p className="card-text">{item.tip}</p>
+            </div>
+          </div>
         
       ))) : (
       <div> Loading MurMurs, please wait... </div>
