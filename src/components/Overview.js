@@ -16,6 +16,8 @@ const [ filteredData, setFilteredData ] = useState([]);
 const [ trigger, setTrigger ] = useState(0);
 let indexArray=[]
 
+
+
 useEffect(() => {
 console.log("effect triggered")
 
@@ -86,28 +88,48 @@ const handleClick = function (event) {
             Warning
           </button>
         </div>
+        <br/>      
 
-        
+
         {indexArray.length > 0 ? (
           indexArray.map((item) => (
+           
+        <div className="container">
+            <div className="card" style={{width: "18rem;"}}>
+              
+                <p className="float-left">{data[item].tags}</p>
+                
+                <p className="float-right">{data[item].upvotes.length}</p>
+                
+            <img src={data[item].picture} className="card-img-top" alt="city_picture"/>
+            <div className="card-body">
+              <p className="card-text">{data[item].tip}</p>
+            </div>
+          </div>
+          </div>        
+          
+      ))) : murmur.length >= 0 ? (
+        murmur.map((item) => (
+          
+          <div className="container">
+          <div className="card" style={{width: "18rem;"}}>
             
-        <div>{data[item]._id}</div>
+              <p className="float-left">{item.tags}</p>
+              
+              <p className="float-right">{item.upvotes.length}</p>
+              
+          <img src={item.picture} className="card-img-top" alt="city_picture"/>
+          <div className="card-body">
+            <p className="card-text">{item.tip}</p>
+          </div>
+        </div>
+        </div>
         
-      ))) : murmur ? (
-      murmur.map((item) => (
-        <div>{item._id}</div>
-        )) 
-      ) : (
+        ))) : (
         <div> loading...</div>
       )}
-
-
-
       </>
-
-
 
   )
 }
-
 export default Overview
