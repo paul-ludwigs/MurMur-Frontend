@@ -13,44 +13,51 @@ const citynameCap = cityname.charAt(0).toUpperCase() + cityname.slice(1);
 const [ data, setData ] = useState([]);
 const [ filter, setFilter ] = useState([]);
 const [ filteredData, setFilteredData ] = useState([]);
+const [ trigger, setTrigger ] = useState(0);
+let indexArray=[]
 
 useEffect(() => {
+console.log("effect triggered")
 
   if(data.length <= 0){
   axios.get(`${api}/murmur/${cityname}`)
-  .then((data) => {
-    setData(data.data);
-    setFilteredData(data.data)
+  .then((res) => {
+    setData(res.data);
+    setFilteredData(res.data)
   })
   .catch((error) => console.log(error));
 }
 
 // zeige nur was passende filter tags hat:
 
-}, []);
+
+}, [trigger]);
 
 console.log(filteredData)
-//console.log(data.data);
 let murmur = filteredData;
-//console.log(murmur);
 
+// find index of object in initial fetch-array if filter matches, save index in indexArray
+filteredData.map((item, index) => item.tags.map((entry) => {    
+  if(filter.includes(entry) && !indexArray.includes(index)){
+    indexArray.push(index)    
+  };
+}));
 
-
-// button pushes or splices its name into/from array:
+// button pushes or splices its name into/from filter array:
 const handleClick = function (event) {
-  
-  if(filter.includes(event.target.innerText)){
-       const index = filter.findIndex(element => element == event.target.innerText);    
-       filter.splice(index, 1);  
+  let placeholderArray = filter
+  if(placeholderArray.includes(event.target.innerText)){
+       const index = placeholderArray.findIndex(element => element == event.target.innerText);    
+       placeholderArray.splice(index, 1);
+       setFilter(placeholderArray);
+       
      } else {    
-         filter.push(event.target.innerText);
-       };
+      placeholderArray.push(event.target.innerText);
+         setFilter(placeholderArray);
+       };       
+       setTrigger(trigger+1)
        console.log(filter)
-  
-}
-
-
-
+};
 
 
   return (
@@ -81,13 +88,17 @@ const handleClick = function (event) {
         </div>
 
         
-        {murmur.length >= 0 ? (
-          murmur.map((item) => (
+        {indexArray.length > 0 ? (
+          indexArray.map((item) => (
             
-        <div>hallo</div>
+        <div>{data[item]._id}</div>
         
-      ))) : (
-      <div> Loading MurMurs, please wait... </div>
+      ))) : murmur ? (
+      murmur.map((item) => (
+        <div>{item._id}</div>
+        )) 
+      ) : (
+        <div> loading...</div>
       )}
 
 
