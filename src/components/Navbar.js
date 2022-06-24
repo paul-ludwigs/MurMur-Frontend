@@ -23,7 +23,7 @@ function Navbar() {
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="nav navbar-nav mb-2 mb-lg-0 align-items-center">
+      <ul className="nav navbar-nav mb-2 mb-lg-0 align-items-center ms-auto">
         <li className="nav-item">
             <NavLink to="/search" className="nav-link" aria-current="page">Search City</NavLink>
         </li>
