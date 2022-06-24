@@ -1,11 +1,12 @@
 import React from 'react';
 import axios from "axios";
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 
 function Overview() {
 const api = process.env.REACT_APP_API_URL;
 const { cityname } = useParams();
+
 
 // capitalize the first letter of the cityname:
 const citynameCap = cityname.charAt(0).toUpperCase() + cityname.slice(1);
@@ -16,6 +17,7 @@ const [ filteredData, setFilteredData ] = useState([]);
 const [ trigger, setTrigger ] = useState(0);
 let indexArray=[]
 
+const id = data._id
 
 
 useEffect(() => {
@@ -91,10 +93,11 @@ const handleClick = function (event) {
         <br/>      
 
 
+
         {indexArray.length > 0 ? (
-          indexArray.map((item) => (
+          indexArray.map((item, index) => (
            
-        <div className="container">
+        <div className="container" key={index}>
             <div className="card" style={{width: "18rem;"}}>
               
                 <p className="float-left">{data[item].tags}</p>
@@ -103,15 +106,17 @@ const handleClick = function (event) {
                 
             <img src={data[item].picture} className="card-img-top" alt="city_picture"/>
             <div className="card-body">
+
               <p className="card-text">{data[item].tip}</p>
+              <Link to={`${data[index]._id}`} className="btn">Select</Link>
             </div>
           </div>
           </div>        
           
       ))) : murmur.length >= 0 ? (
-        murmur.map((item) => (
+        murmur.map((item, index) => (
           
-          <div className="container">
+          <div className="container" key={index}>
           <div className="card" style={{width: "18rem;"}}>
             
               <p className="float-left">{item.tags}</p>
@@ -121,6 +126,7 @@ const handleClick = function (event) {
           <img src={item.picture} className="card-img-top" alt="city_picture"/>
           <div className="card-body">
             <p className="card-text">{item.tip}</p>
+            <Link to={`${murmur[index]._id}`} className="btn">Select</Link>
           </div>
         </div>
         </div>
