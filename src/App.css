@@ -30,6 +30,9 @@ input[type="file"] {
 .city-name {
   font-family: 'Dancing Script', cursive;
   color: #EE9173;
+  font-size: 5rem;
+  text-align: center;
+  margin: 2rem;
 }
 
 .button {
@@ -82,4 +85,34 @@ input[type="file"] {
   color: #31AEC6;
   min-width: 30%;
   border-radius: 20px;
+}
+
+/* DETAIL */
+.murmur-text {
+  min-height: 10rem;
+  border: 1px solid #333;
+  background-color: beige;
+}
+
+.vote-button {
+  color: gray;
+  font-size: 2rem;
+  padding-right: .1em;
+}
+.upvote-button {
+  color: green;
+}
+.downvote-button {
+  color: red;
+}
+.detail-tag {
+  background-color: #EE9173;
+  margin: .2rem;
+  margin-top: .5rem;
+  text-align: center;
+  border-radius: 2rem;
+  font-weight: 700;  
+}
+.detail-tag-text {
+  margin: 0;
 }
