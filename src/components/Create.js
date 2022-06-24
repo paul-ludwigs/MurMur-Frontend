@@ -61,7 +61,8 @@ function Create() {
     });
 
     // find current date:
-    const today = new Date().toLocaleDateString();
+    const today = new Date(Date.now()).toISOString();
+    console.log(today);
 
     // enforce at least one tag is toggled and both input fields are filled out, then post request:
     if (postArray.length == 0 || !cityName || !tip) {
@@ -69,7 +70,7 @@ function Create() {
     } else {
       const newMurmur = {
         user_id: userId,
-        city: cityName,
+        city: cityName.toLowerCase(),
         tip: tip,
         picture: "",
         address: "",
