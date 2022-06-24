@@ -18,23 +18,23 @@ function Navbar() {
   return (
 <nav className="navbar navbar-expand-lg">
   <div className="container-fluid">
-    <NavLink to="/search"><a className="navbar-brand">MurMur</a></NavLink>
+    <NavLink to="/search" className="navbar-brand">MurMur</NavLink>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="nav navbar-nav mb-2 mb-lg-0 ">
+      <ul className="nav navbar-nav mb-2 mb-lg-0 align-items-center">
         <li className="nav-item">
-            <NavLink to="/search"><a className="nav-link" aria-current="page">Search City</a></NavLink>
+            <NavLink to="/search" className="nav-link" aria-current="page">Search City</NavLink>
         </li>
         <li className="nav-item">
-        <NavLink to="/create"><a className="nav-link" aria-current="page">Write MurMur</a></NavLink>
+        <NavLink to="/create" className="nav-link" aria-current="page">Write MurMur</NavLink>
         </li>
         <li className="nav-item">
-        <NavLink to="/profile"><a className="nav-link" aria-current="page">Profile</a></NavLink>
+        <NavLink to="/profile"className="nav-link" aria-current="page">Profile</NavLink>
         </li>
         <li className="nav-item">
-        <a onClick={handleClick} className="nav-link" aria-current="page">Logout</a>
+        <NavLink to="/" onClick={handleClick} className="nav-link" aria-current="page">Logout</NavLink>
         </li>
       </ul>
     </div>
