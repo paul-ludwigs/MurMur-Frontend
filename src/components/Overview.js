@@ -108,7 +108,7 @@ const handleClick = function (event) {
             <div className="card-body">
 
               <p className="card-text">{data[item].tip}</p>
-              <Link to={`${data[index]._id}`} className="btn">Select</Link>
+              <Link to={`${data[item]._id}`} className="btn">Select</Link>
             </div>
           </div>
           </div>        
@@ -126,7 +126,7 @@ const handleClick = function (event) {
           <img src={item.picture} className="card-img-top" alt="city_picture"/>}
           <div className="card-body">
             <p className="card-text">{item.tip}</p>
-            <Link to={`${murmur[index]._id}`} className="btn">Select</Link>
+            <Link to={`${item._id}`} className="btn">Select</Link>
           </div>
         </div>
         </div>
