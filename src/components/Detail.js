@@ -12,58 +12,81 @@ function Detail() {
   const [userId, setUserId] = useState("");
   const [upvoteActive, setUpvoteActive] = useState(false);
   const [downvoteActive, setDownvoteActive] = useState(false);
+  const [upvotesCount, setUpvotesCount] = useState();
+  const [downvotesCount, setDownvotesCount] = useState();
+
 
   useEffect(() => {
     const fetching = async () => {
+      const token = localStorage.getItem("token");
+      const loggedInUser = await axios.get(
+        `${api}/protected/me`,
+        { headers: { token: token } }
+      );
+      console.log(loggedInUser);
+      setUsername(loggedInUser.data.username);
+
       const { data } = await axios.get(`${api}/murmur/id/${id}`);
 
       const userData = await axios.get(`${api}/users/${data.user_id}`);
       setMurmur(data);
       setUser(userData.data);
+      setUpvotesCount(data.upvotes.length);
+      setDownvotesCount(data.downvotes.length);
+      console.log(data.upvotes);
+
+      if(data.upvotes.some(i => i.username.includes(loggedInUser.data.username)))
+      {
+        setUpvoteActive(true);
+      }
+      else if (data.downvotes.some(i => i.username.includes(loggedInUser.data.username)))
+      {
+        setDownvoteActive(true);
+      }
     }
     fetching();
   }, [api, id]);
 
   const handleUpvote = function (event) {
     setUpvoteActive((current) => !current);
+    console.log(upvoteActive);
     const fetching = async () => {
-      const token = localStorage.getItem("token");
-      const { data } = await axios.get(
-        `${api}/protected/me`,
-        { headers: { token: token } }
-      );
-
-      console.log(data)
-
       await   
       axios
-      .put(`${api}/murmur/upvote`, {username: data.username, id: murmur._id})
+      .put(`${api}/murmur/upvote`, {username: userName, id: murmur._id})
       .then((data) => console.log(data));
     }
     fetching();
+    if(!upvoteActive)
+    {
+      setUpvotesCount(upvotesCount + 1);
+    } else {
+      setUpvotesCount(upvotesCount - 1);
+    }
+    
     if (!upvoteActive && downvoteActive) {
       setDownvoteActive(false);
+      setDownvotesCount(downvotesCount - 1);
     }
   };
   const handleDownvote = function (event) {
     setDownvoteActive((current) => !current);
     const fetching = async () => {
-      const token = localStorage.getItem("token");
-      const { data } = await axios.get(
-        `${api}/protected/me`,
-        { headers: { token: token } }
-      );
-
-      console.log(data)
-
       await   
       axios
-      .put(`${api}/murmur/downvote`, {username: data.username, id: murmur._id})
+      .put(`${api}/murmur/downvote`, {username: userName, id: murmur._id})
       .then((data) => console.log(data));
     }
     fetching();
+    if(!downvoteActive)
+    {
+      setDownvotesCount(downvotesCount + 1);
+    } else {
+      setDownvotesCount(downvotesCount - 1);
+    }
     if (!downvoteActive && upvoteActive) {
       setUpvoteActive(false);
+      setUpvotesCount(upvotesCount - 1);
     }
   };
 
@@ -125,7 +148,7 @@ function Detail() {
                       : "fa-solid fa-thumbs-up vote-button"
                   }
                 ></i>
-                {murmur.upvotes.length}
+                {upvotesCount}
               </button>
             </div>
             <div className="col-4 col-sm-3 text-center">
@@ -137,7 +160,7 @@ function Detail() {
                       : "fa-solid fa-thumbs-down vote-button"
                   }
                 ></i>
-                {murmur.downvotes.length}
+                {downvotesCount}
               </button>
             </div>
           </div>
