@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 function Detail() {
   const api = process.env.REACT_APP_API_URL;
   const { id } = useParams();
+  let tagClass;
 
   const [murmur, setMurmur] = useState(null);
   const [user, setUser] = useState(null);
@@ -14,6 +15,16 @@ function Detail() {
   const [downvoteActive, setDownvoteActive] = useState(false);
   const [upvotesCount, setUpvotesCount] = useState();
   const [downvotesCount, setDownvotesCount] = useState();
+  const [tagClassnames, setTagClassnames] = useState([])
+
+  const tags = [
+    { name: "Food+Drink", classname: "fa-solid fa-utensils"},
+    { name: "Location", classname: "fa-solid fa-location-dot"},
+    { name: "Sport+Activity", classname: "fa-solid fa-volleyball"},
+    { name: "Event", classname: "fa-solid fa-calendar-check"},
+    { name: "General", classname: "fa-solid fa-ball-pile"},
+    { name: "Warning", classname: "fa-solid fa-skull-crossbones"},
+  ];
 
 
   useEffect(() => {
@@ -34,6 +45,13 @@ function Detail() {
       setUpvotesCount(data.upvotes.length);
       setDownvotesCount(data.downvotes.length);
       console.log(data.upvotes);
+
+      let tagClasses = [];
+      data.tags.map(tag => {
+         tagClasses.push(tags.find(element => element.name == tag).classname);
+      })
+      console.log(tagClasses);
+      setTagClassnames(tagClasses);
 
       if(data.upvotes.some(i => i.username.includes(loggedInUser.data.username)))
       {
@@ -127,10 +145,13 @@ function Detail() {
           </div>
           <div className="row">
             <div className="col-xs-0 col-sm-2"></div>
-            {murmur.tags.map((tag) => (
+            {murmur.tags.map((tag, index) => (
+              <>
+              {/* {tagClass = tags.find(element => element.name == tag)} */}
               <div className="col-3 col-md-2 col-lg-1 detail-tag">
-                <p className="detail-tag-text">{tag}</p>
+                <i className={tagClassnames[index] + " detail-tag-text "}></i>
               </div>
+              </>
             ))}
           </div>
           <div className="row mt-5 justify-content-center">
