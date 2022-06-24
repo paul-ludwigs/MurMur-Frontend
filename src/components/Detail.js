@@ -8,36 +8,60 @@ function Detail() {
 
   const [murmur, setMurmur] = useState(null);
   const [user, setUser] = useState(null);
+  const [userName, setUsername] = useState("");
   const [userId, setUserId] = useState("");
   const [upvoteActive, setUpvoteActive] = useState(false);
   const [downvoteActive, setDownvoteActive] = useState(false);
 
-  axios
-  .get(`${api}/murmur/id/${id}`)
-  .then((data) => {
-    setMurmur(data.data);
-    setUserId(data.data.user_id)
-  })
-  .catch((error) => console.log(error));
-
   useEffect(() => {
-    if(userId) {
-      axios
-        .get(`${api}/users/${userId}`)
-        .then((data) => setUser(data.data))
-        .catch((error) => console.log(error));
+    const fetching = async () => {
+      const { data } = await axios.get(`${api}/murmur/id/${id}`);
+
+      const userData = await axios.get(`${api}/users/${data.user_id}`);
+      setMurmur(data);
+      setUser(userData.data);
     }
-  }, [userId]);
+    fetching();
+  }, [api, id]);
 
   const handleUpvote = function (event) {
     setUpvoteActive((current) => !current);
-    console.log(upvoteActive);
+    const fetching = async () => {
+      const token = localStorage.getItem("token");
+      const { data } = await axios.get(
+        `${api}/protected/me`,
+        { headers: { token: token } }
+      );
+
+      console.log(data)
+
+      await   
+      axios
+      .put(`${api}/murmur/upvote`, {username: data.username, id: murmur._id})
+      .then((data) => console.log(data));
+    }
+    fetching();
     if (!upvoteActive && downvoteActive) {
       setDownvoteActive(false);
     }
   };
   const handleDownvote = function (event) {
     setDownvoteActive((current) => !current);
+    const fetching = async () => {
+      const token = localStorage.getItem("token");
+      const { data } = await axios.get(
+        `${api}/protected/me`,
+        { headers: { token: token } }
+      );
+
+      console.log(data)
+
+      await   
+      axios
+      .put(`${api}/murmur/downvote`, {username: data.username, id: murmur._id})
+      .then((data) => console.log(data));
+    }
+    fetching();
     if (!downvoteActive && upvoteActive) {
       setUpvoteActive(false);
     }
