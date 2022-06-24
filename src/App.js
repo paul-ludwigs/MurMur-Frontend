@@ -22,7 +22,7 @@ function App() {
           <Route path={"/search"} element={<Search />} />
           <Route path={"/create"} element={<Create />} />
           <Route path={"/search/:cityname"} element={<Overview />} />
-          <Route path={"/:cityname/:id"} element={<Detail />} />
+          <Route path={"search/:cityname/:id"} element={<Detail />} />
           <Route path={"/profile"} element={<Profile />} />   
         </Routes>
       </main>
