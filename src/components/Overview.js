@@ -103,8 +103,8 @@ const handleClick = function (event) {
                 <p className="float-left">{data[item].tags}</p>
                 
                 <p className="float-right">{data[item].upvotes.length}</p>
-                
-            <img src={data[item].picture} className="card-img-top" alt="city_picture"/>
+                {data[item].picture  &&
+            <img src={data[item].picture} className="card-img-top" alt="city_picture"/>}
             <div className="card-body">
 
               <p className="card-text">{data[item].tip}</p>
@@ -122,8 +122,8 @@ const handleClick = function (event) {
               <p className="float-left">{item.tags}</p>
               
               <p className="float-right">{item.upvotes.length}</p>
-              
-          <img src={item.picture} className="card-img-top" alt="city_picture"/>
+              {item.picture &&
+          <img src={item.picture} className="card-img-top" alt="city_picture"/>}
           <div className="card-body">
             <p className="card-text">{item.tip}</p>
             <Link to={`${murmur[index]._id}`} className="btn">Select</Link>
