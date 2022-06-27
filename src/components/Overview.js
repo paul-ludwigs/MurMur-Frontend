@@ -7,22 +7,20 @@ function Overview() {
 const api = process.env.REACT_APP_API_URL;
 const { cityname } = useParams();
 
-
 // capitalize the first letter of the cityname:
 const citynameCap = cityname.charAt(0).toUpperCase() + cityname.slice(1);
 
+// declare States
 const [ data, setData ] = useState([]);
 const [ filter, setFilter ] = useState([]);
 const [ filteredData, setFilteredData ] = useState([]);
-const [ trigger, setTrigger ] = useState(0);
-let indexArray=[]
 
-const id = data._id
+// create helper arrays for filter
+let indexArray=[];
+let filteredObjects = [];
 
-
+//fetch data in effect:
 useEffect(() => {
-console.log("effect triggered")
-
   if(data.length <= 0){
   axios.get(`${api}/murmur/${cityname}`)
   .then((res) => {
@@ -30,37 +28,43 @@ console.log("effect triggered")
     setFilteredData(res.data)
   })
   .catch((error) => console.log(error));
-}
-
-// zeige nur was passende filter tags hat:
-
-
-}, [trigger]);
-
-console.log(filteredData)
-let murmur = filteredData;
-
-// find index of object in initial fetch-array if filter matches, save index in indexArray
-filteredData.map((item, index) => item.tags.map((entry) => {    
-  if(filter.includes(entry) && !indexArray.includes(index)){
-    indexArray.push(index)    
-  };
-}));
+}}, []);
 
 // button pushes or splices its name into/from filter array:
 const handleClick = function (event) {
-  let placeholderArray = filter
+  let placeholderArray = filter;
   if(placeholderArray.includes(event.target.innerText)){
        const index = placeholderArray.findIndex(element => element == event.target.innerText);    
        placeholderArray.splice(index, 1);
        setFilter(placeholderArray);
+       newData();
        
      } else {    
       placeholderArray.push(event.target.innerText);
          setFilter(placeholderArray);
-       };       
-       setTrigger(trigger+1)
-       console.log(filter)
+         newData();
+       };      
+};
+
+const newData = function () {
+  // find index of object in initial fetch-array if filter matches, save index in indexArray
+  data.map((item, index) => item.tags.map((entry) => {    
+    if(filter.includes(entry) && !indexArray.includes(index)){
+      indexArray.push(index);   
+    };
+  }));
+    if(indexArray.length > 0){
+      setFilteredData([]);
+      indexArray.map(arrayIndex =>{
+        filteredObjects.push(data[arrayIndex]);
+        setFilteredData(filteredObjects);
+      })
+    } else if(filter.length == 0){
+      setFilteredData(data);      
+    } else {
+      filteredObjects = [];
+      setFilteredData(filteredObjects);
+    };
 };
 
 
@@ -94,45 +98,27 @@ const handleClick = function (event) {
 
 
 
-        {indexArray.length > 0 ? (
-          indexArray.map((item, index) => (
+        {filteredData.length > 0 ? (
+          filteredData.map((item, index) => (
            
         <div className="container" key={index}>
             <div className="card" style={{width: "18rem;"}}>
               
-                <p className="float-left">{data[item].tags}</p>
+                <p className="float-left">{filteredData[index].tags}</p>
                 
-                <p className="float-right">{data[item].upvotes.length}</p>
-                {data[item].picture  &&
-            <img src={data[item].picture} className="card-img-top" alt="city_picture"/>}
+                <p className="float-right">{filteredData[index].upvotes.length}</p>
+                {filteredData[index].picture  &&
+            <img src={filteredData[index].picture} className="card-img-top" alt="city_picture"/>}
             <div className="card-body">
 
-              <p className="card-text">{data[item].tip}</p>
-              <Link to={`${data[item]._id}`} className="btn">Select</Link>
+              <p className="card-text">{filteredData[index].tip}</p>
+              <Link to={`${filteredData[index]._id}`} className="btn">Select</Link>
             </div>
           </div>
           </div>        
           
-      ))) : murmur.length >= 0 ? (
-        murmur.map((item, index) => (
-          
-          <div className="container" key={index}>
-          <div className="card" style={{width: "18rem;"}}>
-            
-              <p className="float-left">{item.tags}</p>
-              
-              <p className="float-right">{item.upvotes.length}</p>
-              {item.picture &&
-          <img src={item.picture} className="card-img-top" alt="city_picture"/>}
-          <div className="card-body">
-            <p className="card-text">{item.tip}</p>
-            <Link to={`${item._id}`} className="btn">Select</Link>
-          </div>
-        </div>
-        </div>
-        
-        ))) : (
-        <div> loading...</div>
+      ))) : (
+        <div> No match found...</div>
       )}
       </>
 
