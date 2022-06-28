@@ -2,6 +2,9 @@ import React from "react";
 import axios from "axios";
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Create() {
   const [userId, setUserId] = useState();
@@ -66,7 +69,7 @@ function Create() {
 
     // enforce at least one tag is toggled and both input fields are filled out, then post request:
     if (postArray.length == 0 || !cityName || !tip) {
-      alert("Please fill out all Forms and select at least one Tag!");
+      toast("Please fill out all Forms and select at least one Tag!");      
     } else {
       const newMurmur = {
         user_id: userId,
@@ -83,16 +86,18 @@ function Create() {
 
       // check response status and give user feedback:
       function statusCheck(res) {if(res.status === 201){
-        alert("Thanks for sharing! Your MurMur has been created!")
+        toast("Thanks for sharing! Your MurMur has been created!",
+         {onClose: () => window.location.reload()})
       } else {
-        alert("Oh no. Something went wrong, we could not create your MurMur!")
+        toast("Oh no. Something went wrong, we could not create your MurMur!")
       }
-    location.reload()};
+    };
     }
   };
 
   return (
     <>
+    <ToastContainer />
       <div className="text-center mb-3">
         <h1>Create a new MurMur!</h1>
         <h2>We are eager to hear about what you want to share!</h2>

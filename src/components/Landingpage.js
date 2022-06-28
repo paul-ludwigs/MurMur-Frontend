@@ -3,6 +3,8 @@ import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Landingpage = () => {
   const api = process.env.REACT_APP_API_URL;
@@ -20,7 +22,7 @@ const Landingpage = () => {
        password: password,
       };
       if(!email || !password){
-        alert("Please fill out all forms!")
+        toast("Please fill out all forms!")
       } else {
           try {
             const res = await axios.post(
@@ -33,7 +35,7 @@ const Landingpage = () => {
             setIsAuthenticated(true);
           } catch (error) {
             console.log(error);
-            alert("Unable to login. Please check your login credentials!")
+            toast("Unable to login. Please check your login credentials!")
           }
          }
     };
@@ -43,6 +45,7 @@ const Landingpage = () => {
   return (
 
     <>
+    <ToastContainer />
       <div className="container mx-auto text-center mt-5">
         <p className="card-text">
           Our app gives you tips but also warnings from other travelers. But you
