@@ -28,18 +28,25 @@ function Detail() {
     { name: "Warning", classname: "fa-solid fa-skull-crossbones"},
   ];
 
-  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated } = useContext(AuthContext);
 
 
   useEffect(() => {
     const fetching = async () => {
-      // const token = localStorage.getItem("token");
-      // const loggedInUser = await axios.get(
-      //   `${api}/protected/me`,
-      //   { headers: { token: token } }
-      // );
-      // console.log(loggedInUser);
-      // setUsername(loggedInUser.data.username);
+      const token = localStorage.getItem("token");
+      if(isAuthenticated)
+      {
+        var loggedInUser = await axios.get(
+          `${api}/protected/me`,
+          { headers: { token: token } }
+          
+          );
+          console.log(loggedInUser);
+          setUsername(loggedInUser.data.username);
+      }
+      else {
+        var loggedInUser = "Stranger";
+      }
 
       const { data } = await axios.get(`${api}/murmur/id/${id}`);
 
@@ -57,58 +64,75 @@ function Detail() {
       console.log(tagClasses);
       setTagClassnames(tagClasses);
 
-      // if(data.upvotes.some(i => i.username.includes(loggedInUser.data.username)))
-      // {
-      //   setUpvoteActive(true);
-      // }
-      // else if (data.downvotes.some(i => i.username.includes(loggedInUser.data.username)))
-      // {
-      //   setDownvoteActive(true);
-      // }
+      if(isAuthenticated)
+      {
+        if(data.upvotes.some(i => i.username.includes(loggedInUser.data.username)))
+        {
+          setUpvoteActive(true);
+        }
+        else if (data.downvotes.some(i => i.username.includes(loggedInUser.data.username)))
+        {
+          setDownvoteActive(true);
+        }
+      }
     }
     fetching();
   }, [api, id]);
 
   const handleUpvote = function (event) {
-    setUpvoteActive((current) => !current);
-    console.log(upvoteActive);
-    const fetching = async () => {
-      await   
-      axios
-      .put(`${api}/murmur/upvote`, {username: userName, id: murmur._id})
-      .then((data) => console.log(data));
-    }
-    fetching();
-    if(!upvoteActive)
+    if(!isAuthenticated)
     {
-      setUpvotesCount(upvotesCount + 1);
-    } else {
-      setUpvotesCount(upvotesCount - 1);
+      alert("Login please");
     }
-    
-    if (!upvoteActive && downvoteActive) {
-      setDownvoteActive(false);
-      setDownvotesCount(downvotesCount - 1);
+    else
+    {
+      setUpvoteActive((current) => !current);
+      console.log(upvoteActive);
+      const fetching = async () => {
+        await   
+        axios
+        .put(`${api}/murmur/upvote`, {username: userName, id: murmur._id})
+        .then((data) => console.log(data));
+      }
+      fetching();
+      if(!upvoteActive)
+      {
+        setUpvotesCount(upvotesCount + 1);
+      } else {
+        setUpvotesCount(upvotesCount - 1);
+      }
+      
+      if (!upvoteActive && downvoteActive) {
+        setDownvoteActive(false);
+        setDownvotesCount(downvotesCount - 1);
+      }
     }
   };
   const handleDownvote = function (event) {
-    setDownvoteActive((current) => !current);
-    const fetching = async () => {
-      await   
-      axios
-      .put(`${api}/murmur/downvote`, {username: userName, id: murmur._id})
-      .then((data) => console.log(data));
-    }
-    fetching();
-    if(!downvoteActive)
+    if(!isAuthenticated)
     {
-      setDownvotesCount(downvotesCount + 1);
-    } else {
-      setDownvotesCount(downvotesCount - 1);
+      alert("Login please");
     }
-    if (!downvoteActive && upvoteActive) {
-      setUpvoteActive(false);
-      setUpvotesCount(upvotesCount - 1);
+    else
+    {
+      setDownvoteActive((current) => !current);
+      const fetching = async () => {
+        await   
+        axios
+        .put(`${api}/murmur/downvote`, {username: userName, id: murmur._id})
+        .then((data) => console.log(data));
+      }
+      fetching();
+      if(!downvoteActive)
+      {
+        setDownvotesCount(downvotesCount + 1);
+      } else {
+        setDownvotesCount(downvotesCount - 1);
+      }
+      if (!downvoteActive && upvoteActive) {
+        setUpvoteActive(false);
+        setUpvotesCount(upvotesCount - 1);
+      }
     }
   };
 
@@ -166,7 +190,6 @@ function Detail() {
             </div>
           </div>
           <div className="row justify-content-center mt-5 mb-5">
-            {isAuthenticated &&
             <div className="col-4 col-sm-3 text-center">
               <button className="btn btn-light" onClick={handleUpvote}>
                 <i
@@ -179,8 +202,8 @@ function Detail() {
                 {upvotesCount}
               </button>
             </div>
-            }
-            {isAuthenticated&&
+            
+
             <div className="col-4 col-sm-3 text-center">
               <button className="btn btn-light" onClick={handleDownvote}>
                 <i
@@ -192,7 +215,7 @@ function Detail() {
                 ></i>
                 {downvotesCount}
               </button>
-            </div>}
+            </div>
           </div>
         </div>
       ) : console.log(murmur)}
