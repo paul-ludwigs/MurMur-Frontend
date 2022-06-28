@@ -14,12 +14,22 @@ function Navbar() {
     navigate(`/`);
   };
 
+  let path;
+  if (isAuthenticated){
+    path = "/search"
+  }else{
+    path= "/"
+  }
+
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <NavLink to="/search" className="navbar-brand">
-          MurMur
-        </NavLink>
+        
+          <NavLink to={`${path}`} className="navbar-brand">
+            MurMur
+          </NavLink>
+        
+
         <button
           className="navbar-toggler"
           type="button"
