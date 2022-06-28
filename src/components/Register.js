@@ -3,6 +3,8 @@ import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Register() {
   const api = process.env.REACT_APP_API_URL;
@@ -17,9 +19,9 @@ function Register() {
     const repeatPassword = event.target[3].value;
 
     if (!accountName || !email || !password || !repeatPassword) {
-      alert("Please fill out all forms!");
+      toast("Please fill out all forms!");
     } else if (password !== repeatPassword) {
-      alert("Your passwords don't match!");
+      toast("Your passwords don't match!");
     } else {
       const newUser = {
         username: accountName,
@@ -46,6 +48,7 @@ function Register() {
 
   return (
     <>
+    <ToastContainer />
       <div className="container-md text-center">
         <div className="row">
           <div className="col-sm-12">
