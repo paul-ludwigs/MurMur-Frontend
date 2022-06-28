@@ -16,6 +16,7 @@ const [ data, setData ] = useState([]);
 const [ filter, setFilter ] = useState([]);
 const [ filteredData, setFilteredData ] = useState([]);
 const [mumurPerPage, setMurmurPerPage] = useState(pageItems);
+const [isFetching, setIsFetching] = useState(true);
 
 // create helper arrays for filter
 let indexArray=[];
@@ -28,8 +29,12 @@ useEffect(() => {
   .then((res) => {
     setData(res.data);
     setFilteredData(res.data)
+    setIsFetching(false)
   })
-  .catch((error) => console.log(error));
+  .catch((error) => {
+    console.log(error)
+    setIsFetching(false);
+  });
 }}, []);
 
 // button pushes or splices its name into/from filter array:
@@ -105,7 +110,7 @@ const showMoreHandler = (e) => {
 
 
 
-        {filteredData.length > 0 ? (
+        {isFetching ? <h1>SPINNNNER</h1> : filteredData.length > 0 ? (
           <>
           {
           filteredData.map((item, index) => (
