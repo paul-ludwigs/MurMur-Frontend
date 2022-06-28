@@ -50,11 +50,12 @@ function Navbar() {
                 Search City
               </NavLink>
             </li>
+            {!isAuthenticated && (
             <li className="nav-item">
               <Link activeClass="active" to="loginformular" spy={true} smooth={true}>
                 LogIn
               </Link>
-            </li>
+            </li>)}
             {isAuthenticated && (
               <>
                 <li className="nav-item">
