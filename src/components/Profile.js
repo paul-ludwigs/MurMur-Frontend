@@ -3,6 +3,9 @@ import axios from "axios";
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 function Profile() {
+
+  const emptyProfilePicture = "https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
+
   const [userName, setUserName] = useState("Accountname");
   const [eMail, setEMail] = useState("Username@email.com");
   const [picture, setPicture] = useState(require("../images/profilepic.JPG"))
@@ -43,12 +46,12 @@ function Profile() {
 
   return (
     <>
-      <div className="card-body text-center mt-5">
-        <img
-          src={picture}
-          alt="profilepic"
-          className="rounded-circle img-fluid"
-          style={{ width: "150px" }}
+    <div className="card-body text-center mt-5">
+      <img
+        src={picture ? picture : emptyProfilePicture}
+        alt="profilepic"
+        className="rounded-circle img-fluid"
+        style={{ width: "150px" }}
         />
         
         <div className="container mx-auto text-center mt-5">

@@ -133,15 +133,17 @@ function Detail() {
             <div className="col-sm-12 text-center">
               <p>{murmur.date}</p>
             </div>
-            <div className="col-11 col-sm-8 text-center p-0">
-              <img
-                src={
-                  murmur.picture
-                }
-                className="card-img-top pt-0 m-0"
-                alt="detail"
-              />{" "}
-            </div>
+            {murmur.picture && 
+              <div className="col-11 col-sm-8 text-center p-0">
+                <img
+                  src={
+                    murmur.picture
+                  }
+                  className="card-img-top pt-0 m-0"
+                  alt="detail"
+                />{" "}
+              </div>
+            }
           </div>
           <div className="row">
             <div className="col-xs-0 col-sm-2"></div>
