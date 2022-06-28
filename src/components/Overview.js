@@ -2,6 +2,7 @@ import React from 'react';
 import axios from "axios";
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
+import { HashLoader } from 'react-spinners';
 
 function Overview() {
 const api = process.env.REACT_APP_API_URL;
@@ -110,7 +111,7 @@ const showMoreHandler = (e) => {
 
 
 
-        {isFetching ? <h1>SPINNNNER</h1> : filteredData.length > 0 ? (
+        {isFetching ? <HashLoader color="#41caea" /> : filteredData.length > 0 ? (
           <>
           {
           filteredData.map((item, index) => (
