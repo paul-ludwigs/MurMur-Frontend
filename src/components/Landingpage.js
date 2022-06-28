@@ -33,6 +33,7 @@ const Landingpage = () => {
             setIsAuthenticated(true);
           } catch (error) {
             console.log(error);
+            alert("Unable to login. Please check your login credentials!")
           }
          }
     };
