@@ -5,7 +5,7 @@ import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 function Search() {
-  const [userName, setUserName] = useState("Accountname");
+  const [userName, setUserName] = useState("Stranger");
 
   const api = process.env.REACT_APP_API_URL;
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);

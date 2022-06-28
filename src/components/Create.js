@@ -86,7 +86,8 @@ function Create() {
         alert("Thanks for sharing! Your MurMur has been created!")
       } else {
         alert("Oh no. Something went wrong, we could not create your MurMur!")
-      }};
+      }
+    location.reload()};
     }
   };
 
@@ -112,7 +113,7 @@ function Create() {
         <div className="container mx-auto text-center mt-3">
           <button
             type="button"
-            className="crbutton btn btn-sm btn-primary mt-2 mx-1 active"
+            className="crbutton btn btn-sm btn-primary mt-2 mx-1"
             data-bs-toggle="button"
             autocomplete="off"
             aria-pressed="true"
@@ -139,7 +140,7 @@ function Create() {
         <div className="container mx-auto text-center mt-1  mb-2">
           <button
             type="button"
-            className="crbutton btn btn-sm btn-primary mt-2 mx-1 active"
+            className="crbutton btn btn-sm btn-primary mt-2 mx-1"
             data-bs-toggle="button"
             autocomplete="off"
             aria-pressed="true"
