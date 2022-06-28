@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 function Overview() {
 const api = process.env.REACT_APP_API_URL;
+const pageItems = 10;
 const { cityname } = useParams();
 
 // capitalize the first letter of the cityname:
@@ -14,6 +15,7 @@ const citynameCap = cityname.charAt(0).toUpperCase() + cityname.slice(1);
 const [ data, setData ] = useState([]);
 const [ filter, setFilter ] = useState([]);
 const [ filteredData, setFilteredData ] = useState([]);
+const [mumurPerPage, setMurmurPerPage] = useState(pageItems);
 
 // create helper arrays for filter
 let indexArray=[];
@@ -43,7 +45,8 @@ const handleClick = function (event) {
       placeholderArray.push(event.target.innerText);
          setFilter(placeholderArray);
          newData();
-       };      
+       };
+  setMurmurPerPage(pageItems);      
 };
 
 const newData = function () {
@@ -66,6 +69,10 @@ const newData = function () {
       setFilteredData(filteredObjects);
     };
 };
+
+const showMoreHandler = (e) => {
+  setMurmurPerPage(mumurPerPage + pageItems);
+}
 
 
   return (
@@ -99,25 +106,35 @@ const newData = function () {
 
 
         {filteredData.length > 0 ? (
+          <>
+          {
           filteredData.map((item, index) => (
+            (index < mumurPerPage) && (
            
         <div className="container" key={index}>
             <div className="card" style={{width: "18rem;"}}>
               
-                <p className="float-left">{filteredData[index].tags}</p>
+                <p className="float-left">{item.tags}</p>
                 
-                <p className="float-right">{filteredData[index].upvotes.length}</p>
-                {filteredData[index].picture  &&
-            <img src={filteredData[index].picture} className="card-img-top" alt="city_picture"/>}
+                <p className="float-right">{item.upvotes.length}</p>
+                {item.picture  &&
+            <img src={item.picture} className="card-img-top" alt="city_picture"/>}
             <div className="card-body">
 
-              <p className="card-text">{filteredData[index].tip}</p>
-              <Link to={`${filteredData[index]._id}`} className="btn">Select</Link>
+              <p className="card-text">{item.tip}</p>
+              <Link to={`${item._id}`} className="btn">Select</Link>
             </div>
           </div>
           </div>        
           
-      ))) : (
+      )))}
+      {mumurPerPage < filteredData.length && (
+      <div>
+      <button onClick={showMoreHandler}>Show more</button>
+      </div>
+      )}
+      </>
+      ) : (
         <div> No match found...</div>
       )}
       </>
