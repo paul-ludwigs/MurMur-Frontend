@@ -2,6 +2,7 @@ import React from 'react';
 import axios from "axios";
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
+import { HashLoader } from 'react-spinners';
 
 function Overview() {
 const api = process.env.REACT_APP_API_URL;
@@ -16,6 +17,7 @@ const [ data, setData ] = useState([]);
 const [ filter, setFilter ] = useState([]);
 const [ filteredData, setFilteredData ] = useState([]);
 const [mumurPerPage, setMurmurPerPage] = useState(pageItems);
+const [isFetching, setIsFetching] = useState(true);
 
 // create helper arrays for filter
 let indexArray=[];
@@ -28,8 +30,12 @@ useEffect(() => {
   .then((res) => {
     setData(res.data);
     setFilteredData(res.data)
+    setIsFetching(false)
   })
-  .catch((error) => console.log(error));
+  .catch((error) => {
+    console.log(error)
+    setIsFetching(false);
+  });
 }}, []);
 
 // button pushes or splices its name into/from filter array:
@@ -105,7 +111,7 @@ const showMoreHandler = (e) => {
 
 
 
-        {filteredData.length > 0 ? (
+        {isFetching ? <HashLoader color="#41caea" /> : filteredData.length > 0 ? (
           <>
           {
           filteredData.map((item, index) => (

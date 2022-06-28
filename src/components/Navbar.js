@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import {Link} from 'react-scroll';
+
 
 function Navbar() {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
@@ -47,6 +49,11 @@ function Navbar() {
               <NavLink to="/search" className="nav-link" aria-current="page">
                 Search City
               </NavLink>
+            </li>
+            <li className="nav-item">
+              <Link activeClass="active" to="loginformular" spy={true} smooth={true}>
+                LogIn
+              </Link>
             </li>
             {isAuthenticated && (
               <>
