@@ -77,7 +77,16 @@ function Create() {
         date: today,
         tags: postArray,
       };
-      axios.post(`${api}/Murmur`, newMurmur);
+      axios.post(`${api}/Murmur`, newMurmur)
+      .then(res => statusCheck(res))
+      .catch(error => console.log(error));
+
+      // check response status and give user feedback:
+      function statusCheck(res) {if(res.status === 201){
+        alert("Thanks for sharing! Your MurMur has been created!")
+      } else {
+        alert("Oh no. Something went wrong, we could not create your MurMur!")
+      }};
     }
   };
 
