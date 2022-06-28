@@ -1,6 +1,8 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
+
 
 function Detail() {
   const api = process.env.REACT_APP_API_URL;
@@ -26,16 +28,18 @@ function Detail() {
     { name: "Warning", classname: "fa-solid fa-skull-crossbones"},
   ];
 
+  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+
 
   useEffect(() => {
     const fetching = async () => {
-      const token = localStorage.getItem("token");
-      const loggedInUser = await axios.get(
-        `${api}/protected/me`,
-        { headers: { token: token } }
-      );
-      console.log(loggedInUser);
-      setUsername(loggedInUser.data.username);
+      // const token = localStorage.getItem("token");
+      // const loggedInUser = await axios.get(
+      //   `${api}/protected/me`,
+      //   { headers: { token: token } }
+      // );
+      // console.log(loggedInUser);
+      // setUsername(loggedInUser.data.username);
 
       const { data } = await axios.get(`${api}/murmur/id/${id}`);
 
@@ -53,14 +57,14 @@ function Detail() {
       console.log(tagClasses);
       setTagClassnames(tagClasses);
 
-      if(data.upvotes.some(i => i.username.includes(loggedInUser.data.username)))
-      {
-        setUpvoteActive(true);
-      }
-      else if (data.downvotes.some(i => i.username.includes(loggedInUser.data.username)))
-      {
-        setDownvoteActive(true);
-      }
+      // if(data.upvotes.some(i => i.username.includes(loggedInUser.data.username)))
+      // {
+      //   setUpvoteActive(true);
+      // }
+      // else if (data.downvotes.some(i => i.username.includes(loggedInUser.data.username)))
+      // {
+      //   setDownvoteActive(true);
+      // }
     }
     fetching();
   }, [api, id]);
@@ -160,6 +164,7 @@ function Detail() {
             </div>
           </div>
           <div className="row justify-content-center mt-5 mb-5">
+            {isAuthenticated &&
             <div className="col-4 col-sm-3 text-center">
               <button className="btn btn-light" onClick={handleUpvote}>
                 <i
@@ -172,6 +177,8 @@ function Detail() {
                 {upvotesCount}
               </button>
             </div>
+            }
+            {isAuthenticated&&
             <div className="col-4 col-sm-3 text-center">
               <button className="btn btn-light" onClick={handleDownvote}>
                 <i
@@ -183,7 +190,7 @@ function Detail() {
                 ></i>
                 {downvotesCount}
               </button>
-            </div>
+            </div>}
           </div>
         </div>
       ) : console.log(murmur)}
