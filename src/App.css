@@ -36,7 +36,8 @@ form {
   height: 70%;
   margin:auto;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.678);}
+  background-color: rgba(255, 255, 255, 0.678);
+}
 
 .plane{
   background: url(https://i.giphy.com/media/IdmhVqdlIvpj3EalKg/giphy.webp); 
@@ -73,7 +74,7 @@ form {
 }
 .btn{
   border-color: rgb(104, 104, 104);
-  --bs-btn-font-weight: 500;
+  --bs-btn-font-weight: 600;
   --bs-btn-color: black;
   --bs-btn-bg: #37debc;
   --bs-btn-border-color: #37debc;
@@ -140,6 +141,22 @@ form {
   font-size: xx-large;
   float:left;
 }
+/* OVERVIEW */
+.overview-card{
+  border-radius:15px;
+  width: auto;
+  height: 70%;  
+  margin-top: 1rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.678);
+}
+.overview-img{
+
+}
+
+
+
+
 
 /* CREATE */
 
@@ -167,7 +184,7 @@ form {
   color: red;
 }
 .detail-tag {
-  background-color: #EE9173;
+  background-color: #37debc;
   margin: .2rem;
   margin-top: .5rem;
   text-align: center;
@@ -177,4 +194,5 @@ form {
 }
 .detail-tag-text {
   margin: 0;
+  color: black;
 }

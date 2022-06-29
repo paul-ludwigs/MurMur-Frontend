@@ -83,7 +83,7 @@ const showMoreHandler = (e) => {
 
   return (
     <>
-    <div className= "container text-center mt-1  mb-2">
+    <div className= "container text-center">
       <div className= "row">
         <div className="text-center col">
           <h1 className= "city-name">{citynameCap}</h1>
@@ -132,14 +132,19 @@ const showMoreHandler = (e) => {
             (index < mumurPerPage) && (
            
         <div className="container" key={index}>
-            <div className="card" style={{width: "18rem;"}}>
-              
-                <p className="float-left">{item.tags}</p>
-                
-                <p className="float-right">{item.upvotes.length}</p>
-                {item.picture  &&
-            <img src={item.picture} className="card-img-top" alt="city_picture"/>}
+            <div className="card overview-card" style={{width: "18rem;"}}>
             <div className="card-body">
+            {item.picture  &&
+            <img src={item.picture} className="card-img-top" alt="city_picture"/>}
+            <div className="row">
+              <div className="d-flex justify-content-between">
+                <p className="mx-2">{item.tags}</p>        
+                             
+                <p className="mx-2">{item.upvotes.length}</p>
+                </div>
+            </div>
+                
+            
 
               <p className="card-text">{item.tip}</p>
               <Link to={`${item._id}`} className="btn">Select</Link>
