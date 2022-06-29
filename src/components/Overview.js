@@ -83,33 +83,47 @@ const showMoreHandler = (e) => {
 
   return (
     <>
-    <div className="text-center city-name"><h1>{citynameCap}</h1></div>
+    <div className= "container text-center mt-1  mb-2">
+      <div className= "row">
+        <div className="text-center city-name col">
+          <h1>{citynameCap}</h1>
+        </div>
+      </div>
 
-    <div className="container mx-auto text-center mt-3">          
+        <div className= "row text-center">
+          <div className= "col">
           <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
             Food+Drink
-          </button>
+          </button>      
           <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
             Location
-          </button>
-          <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
-            Sport+Activity
-          </button>
+          </button>        
+          </div>
         </div>
-        <div className="container mx-auto text-center mt-1  mb-2">          
-          <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
-            Event
-          </button>
-          <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
-            General
-          </button>
-          <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
-            Warning
-          </button>
+
+        <div className= "row text-center">
+          <div className= "col"> 
+            <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
+             General
+            </button>          
+            <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
+             Warning
+            </button>
+          </div>
         </div>
-        <br/>      
 
-
+        <div className= "row text-center">
+          <div className= "col">
+            <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
+              Sport+Activity
+            </button>
+            <button onClick={handleClick} type="button" className="crbutton btn btn-sm btn-primary mt-2 mx-1" data-bs-toggle="button" autocomplete="off">
+             Event
+            </button>
+          </div>
+        </div>
+      </div>
+      <br/>      
 
         {isFetching ? <HashLoader color="#41caea" /> : filteredData.length > 0 ? (
           <>
@@ -143,6 +157,7 @@ const showMoreHandler = (e) => {
       ) : (
         <div> No match found...</div>
       )}
+      
       </>
 
   )

@@ -73,7 +73,7 @@ form {
 }
 .btn{
   border-color: rgb(104, 104, 104);
-  --bs-btn-font-weight: 600;
+  --bs-btn-font-weight: 500;
   --bs-btn-color: black;
   --bs-btn-bg: #37debc;
   --bs-btn-border-color: #37debc;
@@ -144,7 +144,7 @@ form {
 /* CREATE */
 
 .crbutton {
-  min-width: 30%;
+  width:8rem;
   border-radius: 20px;
 };
 
