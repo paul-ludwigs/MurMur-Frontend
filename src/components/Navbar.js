@@ -32,7 +32,11 @@ function Navbar() {
       <div className="container-fluid">
         
           <NavLink to={`${path}`} className="navbar-brand">
-            MurMur
+          <img
+                  src={require("../images/Logo.png")}
+                  alt="logo"
+                  className="logo"
+                /><p className="logoname">MurMur</p>
           </NavLink>
         
 
