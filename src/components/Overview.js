@@ -85,8 +85,8 @@ const showMoreHandler = (e) => {
     <>
     <div className= "container text-center mt-1  mb-2">
       <div className= "row">
-        <div className="text-center city-name col">
-          <h1>{citynameCap}</h1>
+        <div className="text-center col">
+          <h1 className= "city-name">{citynameCap}</h1>
         </div>
       </div>
 
