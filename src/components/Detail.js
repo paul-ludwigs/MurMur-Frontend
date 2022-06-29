@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Detail() {
@@ -82,7 +84,7 @@ function Detail() {
   const handleUpvote = function (event) {
     if(!isAuthenticated)
     {
-      alert("Login please");
+      toast("You can only vote if you're logged in!");
     }
     else
     {
@@ -111,7 +113,7 @@ function Detail() {
   const handleDownvote = function (event) {
     if(!isAuthenticated)
     {
-      alert("Login please");
+      toast("You can only vote if you're logged in!");
     }
     else
     {
@@ -138,6 +140,7 @@ function Detail() {
 
   return (
     <>
+    <ToastContainer />
       {(murmur && user) ? (
         <div className="container-md">
           <div className="row">
