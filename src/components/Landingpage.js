@@ -91,7 +91,7 @@ const Landingpage = () => {
           </div>
 
 
-        </div>
+        
           <button type="submit" className="btn btn-info mb-3 mt-5">
 
             Sign-In
