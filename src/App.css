@@ -3,6 +3,9 @@
 /* GENERAL */
 
 
+a {
+  color:black;
+}
 
 input[type="file"] {
   display: none;
@@ -21,8 +24,6 @@ input[type="file"] {
   font-family: 'Raleway', sans-serif;
   color: #333;
 }
-
-
 
 form {
   display: flex;
@@ -48,7 +49,11 @@ form {
   
 }
 
-
+.register{
+  color: black;
+  min-height: 2rem;
+  margin-bottom: 1rem;
+}
 
 
 

@@ -98,10 +98,11 @@ const Landingpage = () => {
         </form>
 
         {/* Button/Link */}
-        <div className="text-center">
-          <Link to="/register">
-              Register
-          </Link>         
+        <div className="text-center register mt-1">
+          <p className="mx-1" >You don't yet have an account?</p>
+          <Link  to="/register">
+              Register here!
+          </Link>                  
         </div>
       </div>
     </>
