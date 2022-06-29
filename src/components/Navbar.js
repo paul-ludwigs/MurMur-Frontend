@@ -23,6 +23,10 @@ function Navbar() {
     path= "/"
   }
 
+  const clickHandler = () => {
+    navigate("/")
+  }
+
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
@@ -52,7 +56,7 @@ function Navbar() {
             </li>
             {!isAuthenticated && (
             <li className="nav-item">
-              <Link activeClass="active" to="loginformular" spy={true} smooth={true}>
+              <Link activeClass="active" to="loginformular" spy={true} smooth={true} onClick={clickHandler}>
                 LogIn
               </Link>
             </li>)}
