@@ -123,7 +123,7 @@ form {
 /* NAVBAR */
 .navbar {
   background-color: #37debc;
-  padding: 1rem;
+  /* padding: 1rem; */
   font-size: medium;
 }
 .navbar-brand {
