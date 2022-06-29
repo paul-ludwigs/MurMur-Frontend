@@ -62,10 +62,19 @@ form {
 
 .button {
   /* gradient? */
-  color: #31AEC6;
+  color: black;
+  background-color: #37debc;
   
 }
-
+.btn{
+  border-color: #333;
+}
+.btn:focus{
+    outline: none;
+    box-shadow:none;
+    background-color: #eb8653;
+    border-color: #333;
+}
 
 
 .card-city {
@@ -98,7 +107,7 @@ form {
 
 /* NAVBAR */
 .navbar {
-  background-color: #31AEC6;
+  background-color: #37debc;
   padding: 1rem;
 }
 .navbar-brand {
@@ -110,7 +119,7 @@ form {
 /* CREATE */
 
 .crbutton {
-  color: #31AEC6;
+  color: #37debc;
   min-width: 30%;
   border-radius: 20px;
 }
