@@ -102,6 +102,7 @@ function Create() {
         <h1>Create a new MurMur!</h1>
         <h2>We are eager to hear about what you want to share!</h2>
       </div>
+      <div className="container">
       <form onSubmit={handleSubmit}>
         <div className="text-center container mb-3 mx-auto">
           <label htmlFor="exampleFormControlInput1" className="form-label">
@@ -116,6 +117,8 @@ function Create() {
         </div>
 
         <div className="container mx-auto text-center mt-3">
+          <div className="row">
+            <div className="col">
           <button
             type="button"
             className="crbutton btn btn-sm btn-primary mt-2 mx-1"
@@ -133,6 +136,10 @@ function Create() {
           >
             Location
           </button>
+          </div>
+          </div>
+          <div className="row">
+            <div className="col">
           <button
             type="button"
             className="crbutton btn btn-sm btn-primary mt-2 mx-1"
@@ -141,8 +148,8 @@ function Create() {
           >
             Sport+Activity
           </button>
-        </div>
-        <div className="container mx-auto text-center mt-1  mb-2">
+        
+        
           <button
             type="button"
             className="crbutton btn btn-sm btn-primary mt-2 mx-1"
@@ -152,6 +159,10 @@ function Create() {
           >
             Event
           </button>
+          </div>
+          </div>
+          <div className="row">
+            <div className="col">
           <button
             type="button"
             className="crbutton btn btn-sm btn-primary mt-2 mx-1"
@@ -168,6 +179,9 @@ function Create() {
           >
             Warning
           </button>
+          </div>
+          </div>
+        
         </div>
 
         <div className="text-center mb-3 mt-3 container mx-auto">
@@ -187,6 +201,7 @@ function Create() {
           </button>
         </div>
       </form>
+      </div>
     </>
   );
 }
