@@ -142,10 +142,10 @@ function Detail() {
     <>
     <ToastContainer />
       {(murmur && user) ? (
-        <div className="container-md">
+        <div className="container-md transparent-bg mx-3 my-3">
           <div className="row">
             <div className="col-sm-12">
-              <h2 className="city-name">{(murmur.city.charAt(0).toUpperCase() + murmur.city.slice(1))}</h2>
+              <h1 className="cursive-font city-name">{(murmur.city.charAt(0).toUpperCase() + murmur.city.slice(1))}</h1>
             </div>
           </div>
           <div className="row">
@@ -192,7 +192,7 @@ function Detail() {
               <p>{murmur.tip}</p>
             </div>
           </div>
-          <div className="row justify-content-center mt-5 mb-5">
+          <div className="row justify-content-center mt-5 mb-3 py-2">
             <div className="col-4 col-sm-3 text-center">
               <button className="btn btn-light" onClick={handleUpvote}>
                 <i
