@@ -61,7 +61,7 @@ const Landingpage = () => {
             <div className="carousel-item active">
               <div
                 className="card carousel-card"
-                style={{ width: "18rem", margin: "1.5rem auto" }}
+                style={{ width: "18rem", margin:"1.5rem auto" }}
               >
                 <img
                   src={require("../images/Tokyo.JPG")}
@@ -129,7 +129,7 @@ const Landingpage = () => {
             <div className="carousel-item">
               <div
                 className="card carousel-card"
-                style={{ width: "18rem", margin: "1.5rem" }}
+                style={{ width: "18rem", margin:"1.5rem auto" }}
               >
                 <img
                   src={require("../images/Istanbul.JPG")}
@@ -167,7 +167,7 @@ const Landingpage = () => {
             <div className="carousel-item">
               <div
                 className="card carousel-card"
-                style={{ width: "18rem", float: "left", margin: "1.5rem" }}
+                style={{ width: "18rem", margin:"1.5rem auto" }}
               >
                 <img
                   src={require("../images/Cola.JPG")}
