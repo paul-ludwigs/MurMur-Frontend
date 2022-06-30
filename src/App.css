@@ -213,3 +213,8 @@ background-color: rgba(255, 255, 255, 0.678);
   object-fit: fill;
 }
 
+/* Profile */
+
+.labelbtn{
+  border: none;
+}
