@@ -45,16 +45,21 @@ function Search() {
   };
   return (
     <>
-      <div className="container mx-2 text-center my-2 transparent-bg">
-        <div  style={{padding:"1rem"}}>
-          <h3 className="cursive-font" style={{padding:"1rem"}}>Hi {userName},</h3>
-          <p style={{padding:"1rem"}}>
+      <div className="container mx-3 text-center mt-3 mb-2 transparent-bg">
+        <div style={{ padding: "0.5rem" }}>
+          <h1 className="greeting-font">
+            Hi {userName},
+          </h1>
+          <p style={{ padding: "0.5rem" }}>
             Search the name of the city where you want to go or where you are.
             Citysearch helps you to find useful information about your
             destination. So you can find restaurants, bars, fotolocations,
             warnings and more.
           </p>
-          <div className="input-group mb-1" style={{padding:"1rem", justifyContent:"center"}}>
+          <div
+            className="input-group mb-1"
+            style={{ padding: "0.5rem", justifyContent: "center" }}
+          >
             <form onSubmit={submitHandler}>
               <input
                 type="text"
@@ -66,55 +71,38 @@ function Search() {
           </div>
 
           {/* Carousel */}
-          <div className="container mx-auto text-center mt-5 mb-5">
+          <div className="container mx-auto text-center mt-3 mb-5">
             <div
               id="carouselExampleIndicators"
               className="carousel slide"
               data-bs-ride="true"
             >
-              <div className="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="0"
-                  className="active"
-                  aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleIndicators"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
-              </div>
+              
               <div className="carousel-inner">
                 <div className="carouselimage" style={{ height: "100px" }}>
                   <div className="carousel-item active">
                     <img
-                      src={require("../images/Beach.JPG")}
-                      className="d-block w-100"
-                      alt="beach"
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
-                      src={require("../images/Food.JPG")}
-                      className="d-block w-100"
-                      alt="Food"
-                    />
-                  </div>
-                  <div className="carousel-item">
-                    <img
                       src={require("../images/TokyoCity.JPG")}
                       className="d-block w-100"
-                      alt="TokyoCity"
+                      alt="Tokyo"
+                      style={{height:"10rem"}}
+                    />
+                  </div>
+                  <div className="carousel-item">
+                    <div className="text-center" style={{height:"10rem"}}>
+                    <h5>Überschrift</h5>
+                    <p>
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor 
+                    </p>
+                    </div>
+                  </div>
+                  <div className="carousel-item">
+                    <img
+                      src={require("../images/NewYork.JPG")}
+                      className="d-block w-100"
+                      alt="NewYork"
+                      style={{height:"10rem"}}
                     />
                   </div>
                 </div>
