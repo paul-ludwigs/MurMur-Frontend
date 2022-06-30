@@ -80,6 +80,9 @@ form {
   background-color: #37debc;
   
 }
+.tag-button{
+  min-width: 9rem !important;
+}
 .btn{
   border-color: rgb(104, 104, 104);
   --bs-btn-font-weight: 600;
@@ -179,7 +182,7 @@ form {
   color: white;
 }
 .detail-tag {
-  background-color: #37debc;
+  background-color: #492cb2;
   margin: .2rem;
   margin-top: .5rem;
   text-align: center;
