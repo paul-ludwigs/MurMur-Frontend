@@ -104,7 +104,7 @@ function Create() {
       
       <div className="container mx-auto">
         <div className="row">
-          <div className="col transparent-bg mx-3">            
+          <div className="col transparent-bg my-2 mx-3">            
         <h5 className="mt-3">Go on then, we're super eager to learn what you've got to share!</h5>
         <br/>
       <form onSubmit={handleSubmit}>
