@@ -292,15 +292,18 @@ const Landingpage = () => {
           </button>
         </div>
 
-        <div className="card-body">
-          <p className="card-text" style={{ padding: "2rem" }}>
-            Let's login to create a travel tip or planning your trip!
-          </p>
-        </div>
+
+        {/* Login Form box: */}
+      <div className="container">
+        <div className="row">
+        <div className="col transparent-bg mx-3 my-2">
+          <h5 className="mt-3">
+            Let's log you in, shall we?
+          </h5>
 
         {/* Form */}
         <form onSubmit={handleSubmit} id="loginformular">
-          <div className="mb-3 row mt-3">
+          <div className="mb-2 row mt-3">
             <label htmlFor="staticEmail" className="col-sm-2 col-form-label">
               Email
             </label>
@@ -326,7 +329,7 @@ const Landingpage = () => {
             </div>
           </div>
 
-          <button type="submit" className="btn btn-info mb-3 mt-5">
+          <button type="submit" className="btn btn-info mb-3 mt-3">
             Sign-In
           </button>
         </form>
@@ -338,6 +341,9 @@ const Landingpage = () => {
               Register here!
           </Link>                  
         </div>
+      </div>
+      </div>
+      </div>
       </div>
     </>
   );
