@@ -26,7 +26,7 @@ function Detail() {
     { name: "Location", classname: "fa-solid fa-location-dot"},
     { name: "Sport+Activity", classname: "fa-solid fa-volleyball"},
     { name: "Event", classname: "fa-solid fa-calendar-check"},
-    { name: "General", classname: "fa-solid fa-ball-pile"},
+    { name: "General", classname: "fa-solid fa-cubes-stacked"},
     { name: "Warning", classname: "fa-solid fa-skull-crossbones"},
   ];
 
