@@ -90,7 +90,7 @@ function Overview() {
       <div className="container text-center">
         <div className="row">
           <div className="text-center col">
-            <h1 className="city-name">{citynameCap}</h1>
+            <h1 className="cursive-font">{citynameCap}</h1>
           </div>
         </div>
 
