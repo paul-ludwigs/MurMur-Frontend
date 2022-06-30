@@ -53,10 +53,10 @@ function Search() {
             Hi {userName},
           </h1>
           <p style={{ padding: "0.5rem" }}>
-            Search the name of the city where you want to go or where you are.
-            Citysearch helps you to find useful information about your
-            destination. So you can find restaurants, bars, fotolocations,
-            warnings and more.
+            Almost there!
+            Down below you can use the field to enter the Cityname you might be interested in and our Database
+            will spool up to deliver the MurMurs you were looking for!
+            The result page comes with a bunch of filters for you to click and better navigate, you must not worry about those for now!
           </p>
           <div
             className="input-group mb-1"
@@ -92,11 +92,14 @@ function Search() {
                   </div>
                   <div className="carousel-item">
                     <div className="text-center" style={{height:"10rem"}}>
-                    <h5>Überschrift</h5>
+                    <h5>Can't decide?</h5>
                     <p>
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                      sed diam nonumy eirmod tempor 
+                      What about... Tokyo!
                     </p>
+                    <p>
+                      Tokyo, the capital of Japan is among our communitys favourites!
+                    </p>
+                    <p>416 MurMurs are waiting for you!</p>
                     </div>
                   </div>
                   <div className="carousel-item">
@@ -108,10 +111,16 @@ function Search() {
                   </div>
                   <div className="carousel-item">
                     <div className="text-center" style={{height:"10rem"}}>
-                    <h5>Überschrift</h5>
+                    <h5>Being unsure?</h5>
                     <p>
-                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                      sed diam nonumy eirmod tempor 
+                      What about... Rome! 
+                    </p>
+                    <p>
+                       Bella Italia...
+                       Exceptional Food and a city rich in History!                      
+                    </p>
+                    <p>
+                      648 MurMurs for you to explore!
                     </p>
                     </div>
                   </div>
