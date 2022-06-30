@@ -173,10 +173,10 @@ form {
   padding-right: .1em;
 }
 .upvote-button {
-  color: green;
+  color: white;
 }
 .downvote-button {
-  color: red;
+  color: white;
 }
 .detail-tag {
   background-color: #37debc;
