@@ -57,11 +57,11 @@ const Landingpage = () => {
           className="carousel slide"
           data-bs-ride="true"
         >
-          <div className="carousel-inner" >
+          <div className="carousel-inner">
             <div className="carousel-item active">
               <div
                 className="card carousel-card"
-                style={{ width: "18rem", margin:"1.5rem auto" }}
+                style={{ width: "18rem", margin: "1.5rem auto" }}
               >
                 <img
                   src={require("../images/Tokyo.JPG")}
@@ -72,7 +72,7 @@ const Landingpage = () => {
                   <h5 className="card-title">Tokyo</h5>
 
                   <p className="card-text">
-                    Tokyo is the cleanest city which i have ever travelled!The
+                    Tokyo is the cleanest city which i have ever travelled! The
                     people there are very hospitable and there is so much to
                     see. You could spend many years to explore Japan. I love
                     Tokyo{" "}
@@ -129,7 +129,7 @@ const Landingpage = () => {
             <div className="carousel-item">
               <div
                 className="card carousel-card"
-                style={{ width: "18rem", margin:"1.5rem auto" }}
+                style={{ width: "18rem", margin: "1.5rem auto" }}
               >
                 <img
                   src={require("../images/Istanbul.JPG")}
@@ -141,11 +141,7 @@ const Landingpage = () => {
 
                   <p className="card-text">
                     Istanbul are very plenty of attractions that make Istanbul
-                    special. When you are in Istanbul you have to cross the
-                    bosborus by ferry, also crossing from Europe to Asia and you
-                    have to go to the princess islands, where you can enjoy the
-                    island by ride a bicycle. I could spend more time in
-                    Istanbul even if the traffic is very bad.
+                    special.
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -156,6 +152,8 @@ const Landingpage = () => {
                     >
                       <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
                     </svg>
+                    When you are in Istanbul you have to cross the bosborus by
+                    ferry, also crossing from Europe to Asia and ...
                   </p>
 
                   <Link to={`#`} className="btn">
@@ -167,7 +165,7 @@ const Landingpage = () => {
             <div className="carousel-item">
               <div
                 className="card carousel-card"
-                style={{ width: "18rem", margin:"1.5rem auto" }}
+                style={{ width: "18rem", margin: "1.5rem auto" }}
               >
                 <img
                   src={require("../images/Cola.JPG")}
@@ -301,7 +299,10 @@ const Landingpage = () => {
             data-bs-target="#carouselExampleControls"
             data-bs-slide="prev"
           >
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
             <span className="visually-hidden">Previous</span>
           </button>
           <button
@@ -310,7 +311,10 @@ const Landingpage = () => {
             data-bs-target="#carouselExampleControls"
             data-bs-slide="next"
           >
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
             <span className="visually-hidden">Next</span>
           </button>
         </div>
@@ -329,17 +333,24 @@ const Landingpage = () => {
         >
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <div className="card transparent-bg my-3" style={{width:"18rem"}}>
+              <div
+                className="card transparent-bg my-3"
+                style={{ width: "18rem" }}
+              >
                 <img src="..." className="card-img-top" alt="..." />
                 <div className="card-body">
                   <p className="card-text">
-                    Create your own MurMurs and share your experiences with others!
+                    Create your own MurMurs and share your experiences with
+                    others!
                   </p>
                 </div>
               </div>
             </div>
             <div className="carousel-item">
-              <div className="card transparent-bg my-3" style={{width:"18rem"}}>
+              <div
+                className="card transparent-bg my-3"
+                style={{ width: "18rem" }}
+              >
                 <img src="..." className="card-img-top" alt="..." />
                 <div className="card-body">
                   <p className="card-text">
@@ -349,7 +360,10 @@ const Landingpage = () => {
               </div>
             </div>
             <div className="carousel-item">
-              <div className="card transparent-bg my-3" style={{width:"18rem"}}>
+              <div
+                className="card transparent-bg my-3"
+                style={{ width: "18rem" }}
+              >
                 <img src="..." className="card-img-top" alt="..." />
                 <div className="card-body">
                   <p className="card-text">
@@ -365,7 +379,10 @@ const Landingpage = () => {
             data-bs-target="#carouselExampleControlsNoTouching"
             data-bs-slide="prev"
           >
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
             <span className="visually-hidden">Previous</span>
           </button>
           <button
@@ -374,7 +391,10 @@ const Landingpage = () => {
             data-bs-target="#carouselExampleControlsNoTouching"
             data-bs-slide="next"
           >
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
             <span className="visually-hidden">Next</span>
           </button>
         </div>
