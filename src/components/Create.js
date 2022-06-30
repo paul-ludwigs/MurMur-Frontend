@@ -102,7 +102,7 @@ function Create() {
         <h1>Create a new MurMur!</h1>
         <h2>We are eager to hear about what you want to share!</h2>
       </div>
-      <div className="container">
+      <div className="container transparent-bg">
       <form onSubmit={handleSubmit}>
         <div className="text-center container mb-3 mx-auto">
           <label htmlFor="exampleFormControlInput1" className="form-label">

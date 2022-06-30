@@ -55,7 +55,7 @@ function Register() {
             
           <div className="plane">
             <div
-              className="d-flex justify-content-center mt-5 register-card mb-5 "
+              className="d-flex justify-content-center mt-5 transparent-bg mb-5 "
               
             >
               <form onSubmit={handleSubmit} className="mt-5 mb-3">

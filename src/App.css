@@ -30,7 +30,7 @@ form {
   flex-direction: column;
 }
 
-.register-card{
+.transparent-bg{
   border-radius:15px;
   width: auto;
   height: 70%;
@@ -142,20 +142,6 @@ form {
   float:left;
 }
 /* OVERVIEW */
-.overview-card{
-  
-  width: auto;
-  height: 70%;  
-  margin-top: 1rem;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.678);
-}
-.overview-img{
-
-}
-
-
-
 
 
 /* CREATE */
@@ -164,6 +150,7 @@ form {
   width:8rem;
   border-radius: 20px;
 };
+
 
 /* DETAIL */
 .murmur-text {
