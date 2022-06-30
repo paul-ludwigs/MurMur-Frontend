@@ -173,7 +173,7 @@ function Overview() {
             (item, index) =>
               index < mumurPerPage && (
                 <div
-                  className="card overview-card mx-3"
+                  className="card transparent-bg my-2 mx-3"
                   style={{ width: "18rem;" }}
                   key={index}
                 >
