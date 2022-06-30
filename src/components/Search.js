@@ -45,7 +45,9 @@ function Search() {
   };
   return (
     <>
-      <div className="container mx-3 text-center mt-3 mb-2 transparent-bg">
+    <div className="container mx-auto">
+        <div className="row">
+      <div className="col text-center my-2 mx-3 transparent-bg" style={{ padding: "1rem" }}>
         <div style={{ padding: "0.5rem" }}>
           <h1 className="greeting-font">
             Hi {userName},
@@ -71,7 +73,7 @@ function Search() {
           </div>
 
           {/* Carousel */}
-          <div className="container mx-auto text-center mt-3 mb-5">
+          <div className="container text-center mt-3 mb-5" >
             <div
               id="carouselExampleIndicators"
               className="carousel slide"
@@ -83,9 +85,9 @@ function Search() {
                   <div className="carousel-item active">
                     <img
                       src={require("../images/TokyoCity.JPG")}
-                      className="d-block w-100"
+                      className="d-block w-100  carouselimg"
                       alt="Tokyo"
-                      style={{height:"10rem"}}
+                      
                     />
                   </div>
                   <div className="carousel-item">
@@ -99,11 +101,19 @@ function Search() {
                   </div>
                   <div className="carousel-item">
                     <img
-                      src={require("../images/NewYork.JPG")}
-                      className="d-block w-100"
-                      alt="NewYork"
-                      style={{height:"10rem"}}
+                      src={require("../images/California.JPG")}
+                      className="d-block w-100 carouselimg"
+                      alt="California"  
                     />
+                  </div>
+                  <div className="carousel-item">
+                    <div className="text-center" style={{height:"10rem"}}>
+                    <h5>Überschrift</h5>
+                    <p>
+                      Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                      sed diam nonumy eirmod tempor 
+                    </p>
+                    </div>
                   </div>
                 </div>
                 <button
@@ -131,6 +141,8 @@ function Search() {
                   <span className="visually-hidden">Next</span>
                 </button>
               </div>
+            </div>
+            </div>
             </div>
           </div>
         </div>
