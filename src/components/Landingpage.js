@@ -41,40 +41,27 @@ const Landingpage = () => {
     <>
       <ToastContainer />
       <div className="container mx-auto text-center mt-3">
-        <div className="transparent-bg">          
+        <div className="transparent-bg">
           <h1 className="px-2 pt-2">Hello and Welcome to MurMur!</h1>
           <h4 className="mb-3">We're so happy to have you!</h4>
-          <p className="px-2">Are you looking to plan your next vacation, trip, adventure?
-             Maybe you're looking for advice, tips or secrets regarding specific Destinations?</p>
-          <h5 className="px-2 pb-2">Say no more! We've got you covered!</h5>          
+          <p className="px-2">
+            Are you looking to plan your next vacation, trip, adventure? Maybe
+            you're looking for advice, tips or secrets regarding specific
+            Destinations?
+          </p>
+          <h5 className="px-2 pb-2">Say no more! We've got you covered!</h5>
         </div>
-
+        {/* First carousel */}
         <div
           id="carouselExampleIndicators"
           className="carousel slide"
           data-bs-ride="true"
         >
-          <div className="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="0"
-              className="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-          </div>
-          <div className="carousel-inner">
+          <div className="carousel-inner" >
             <div className="carousel-item active">
               <div
                 className="card carousel-card"
-                style={{ width: "18rem", float: "left", margin: "1.5rem" }}
+                style={{ width: "18rem", margin: "1.5rem auto" }}
               >
                 <img
                   src={require("../images/Tokyo.JPG")}
@@ -138,6 +125,46 @@ const Landingpage = () => {
                   </Link>
                 </div>
               </div>
+            </div>
+            <div className="carousel-item">
+              <div
+                className="card carousel-card"
+                style={{ width: "18rem", margin: "1.5rem" }}
+              >
+                <img
+                  src={require("../images/Istanbul.JPG")}
+                  className="card-img-top"
+                  alt="Istanbul"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">Istanbul</h5>
+
+                  <p className="card-text">
+                    Istanbul are very plenty of attractions that make Istanbul
+                    special. When you are in Istanbul you have to cross the
+                    bosborus by ferry, also crossing from Europe to Asia and you
+                    have to go to the princess islands, where you can enjoy the
+                    island by ride a bicycle. I could spend more time in
+                    Istanbul even if the traffic is very bad.
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="orange"
+                      class="bi bi-hand-thumbs-up-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                    </svg>
+                  </p>
+
+                  <Link to={`#`} className="btn">
+                    Select
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="carousel-item">
               <div
                 className="card carousel-card"
                 style={{ width: "18rem", float: "left", margin: "1.5rem" }}
@@ -172,99 +199,6 @@ const Landingpage = () => {
                   </Link>
                 </div>
               </div>
-              <div
-                className="card carousel-card"
-                style={{ width: "18rem", margin: "1.5rem" }}
-              >
-                <img
-                  src={require("../images/Istanbul.JPG")}
-                  className="card-img-top"
-                  alt="Istanbul"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Istanbul</h5>
-
-                  <p className="card-text">
-                    Istanbul are very plenty of attractions that make Istanbul
-                    special. When you are in Istanbul you have to cross the
-                    bosborus by ferry, also crossing from Europe to Asia and you
-                    have to go to the princess islands, where you can enjoy the
-                    island by ride a bicycle. I could spend more time in
-                    Istanbul even if the traffic is very bad.
-                    <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="orange"
-                    class="bi bi-hand-thumbs-up-fill"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
-                  </svg>
-                  </p>
-                  
-
-                  <Link to={`#`} className="btn">
-                    Select
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div
-                className="card carousel-card"
-                style={{ width: "18rem", float: "left", margin: "1.5rem" }}
-              >
-                <img src="..." className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-
-                  <a href="#" className="card-link">
-                    Another link
-                  </a>
-                </div>
-              </div>
-              <div
-                className="card carousel-card"
-                style={{ width: "18rem", float: "left", margin: "1.5rem" }}
-              >
-                <img src="..." className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-
-                  <a href="#" className="card-link">
-                    Another link
-                  </a>
-                </div>
-              </div>
-              <div
-                className="card carousel-card"
-                style={{ width: "18rem", margin: "1.5rem" }}
-              >
-                <img src="..." className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">Card title</h5>
-
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-
-                  <a href="#" className="card-link">
-                    Another link
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
           <button
@@ -293,70 +227,214 @@ const Landingpage = () => {
           </button>
         </div>
 
-        <div className="transparent-bg">          
-          <h2 className="px-2 pt-2">MurMur is an App from the Community, for the Community!</h2>
-          <p className="px-2 pb-2">We firmly believe you cannot find better advice, tips, secrets or even warnings for your
-          next travel destination, than by people who've been there before! Be it from locals or fellow travelers, our Database is bursting
-          with tips for you! </p><p>Not only does our Community author the tips themselves, but our up-/down vote system for each tip gives everyone
-          a voice in helping make the best tips stand out the most!</p>
-                    
-        </div>
-        <div className="transparent-bg">          
-          <h2 className="px-2 pt-2">What MurMur has got to offer:</h2>       
+        <div className="transparent-bg">
+          <h2 className="px-2 pt-2">
+            MurMur is an App from the Community, for the Community!
+          </h2>
+          <p className="px-2 pb-2">
+            We firmly believe you cannot find better advice, tips, secrets or
+            even warnings for your next travel destination, than by people
+            who've been there before! Be it from locals or fellow travelers, our
+            Database is bursting with tips for you!{" "}
+          </p>
+          <p>
+            Not only does our Community author the tips themselves, but our
+            up-/down vote system for each tip gives everyone a voice in helping
+            make the best tips stand out the most!
+          </p>
         </div>
 
+        {/* second carousel */}
+        <div
+          id="carouselExampleIndicators"
+          className="carousel slide"
+          data-bs-ride="true"
+        >
+          <div
+            id="carouselExampleControls"
+            class="carousel"
+            data-bs-ride="carousel"
+          >
+            <div
+              class="carousel-inner transparent-bg mb-3"
+              style={{ margin: "0% 35%", padding: "10%" }}
+            >
+              <div class="carousel-item active">
+                <p>Over 10000 Tips</p>
+              </div>
+              <div class="carousel-item">
+                <p>17000 User</p>
+              </div>
+              <div class="carousel-item">
+                <p>und noch etwas text</p>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <div className="transparent-bg">
+          <h2 className="px-2 pt-2">What MurMur has got to offer:</h2>
+        </div>
+
+        {/* third carousel */}
+
+        <div
+          id="carouselExampleControlsNoTouching"
+          class="carousel slide"
+          data-bs-touch="false"
+          data-bs-interval="false"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card transparent-bg my-3" style={{width:"18rem"}}>
+                <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card transparent-bg my-3" style={{width:"18rem"}}>
+                <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card transparent-bg my-3" style={{width:"18rem"}}>
+                <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControlsNoTouching"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControlsNoTouching"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
 
         {/* Login Form box: */}
-      <div className="container">
-        <div className="row">
-        <div className="col transparent-bg mx-3 my-2">
-          <h5 className="mt-3">
-            Let's log you in, shall we?
-          </h5>
+        <div className="container">
+          <div className="row">
+            <div className="col transparent-bg mx-3 my-2">
+              <h5 className="mt-3">Let's log you in, shall we?</h5>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} id="loginformular">
-          <div className="mb-2 row mt-3">
-            <label htmlFor="staticEmail" className="col-sm-2 col-form-label">
-              Email
-            </label>
-            <div className="col-sm-10">
-              <input
-                type="email"
-                className="form-control"
-                id="staticEmail"
-                placeholder="email@example.com"
-              />
+              {/* Form */}
+              <form onSubmit={handleSubmit} id="loginformular">
+                <div className="mb-2 row mt-3">
+                  <label
+                    htmlFor="staticEmail"
+                    className="col-sm-2 col-form-label"
+                  >
+                    Email
+                  </label>
+                  <div className="col-sm-10">
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="staticEmail"
+                      placeholder="email@example.com"
+                    />
+                  </div>
+                </div>
+                <div className="mb-3 row">
+                  <label
+                    htmlFor="inputPassword"
+                    className="col-sm-2 col-form-label"
+                  >
+                    Password
+                  </label>
+                  <div className="col-sm-10">
+                    <input
+                      type="password"
+                      className="form-control"
+                      id="inputPassword"
+                    />
+                  </div>
+                </div>
+
+                <button type="submit" className="btn btn-info mb-3 mt-3">
+                  Sign-In
+                </button>
+              </form>
+
+              {/* Button/Link */}
+              <div className="text-center register mt-1">
+                <p className="mx-1">You don't yet have an account?</p>
+                <Link to="/register">Register here!</Link>
+              </div>
             </div>
           </div>
-          <div className="mb-3 row">
-            <label htmlFor="inputPassword" className="col-sm-2 col-form-label">
-              Password
-            </label>
-            <div className="col-sm-10">
-              <input
-                type="password"
-                className="form-control"
-                id="inputPassword"
-              />
-            </div>
-          </div>
-
-          <button type="submit" className="btn btn-info mb-3 mt-3">
-            Sign-In
-          </button>
-        </form>
-
-        {/* Button/Link */}
-        <div className="text-center register mt-1">
-          <p className="mx-1" >You don't yet have an account?</p>
-          <Link  to="/register">
-              Register here!
-          </Link>                  
         </div>
-      </div>
-      </div>
-      </div>
       </div>
     </>
   );
