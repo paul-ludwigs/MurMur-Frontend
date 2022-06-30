@@ -3,72 +3,79 @@ import axios from "axios";
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 function Profile() {
-
-  const emptyProfilePicture = "https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
+  const emptyProfilePicture =
+    "https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
 
   const [userName, setUserName] = useState("Accountname");
   const [eMail, setEMail] = useState("Username@email.com");
-  const [picture, setPicture] = useState(require("../images/profilepic.JPG"))
+  const [picture, setPicture] = useState(require("../images/profilepic.JPG"));
   const api = process.env.REACT_APP_API_URL;
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log(token)
+    console.log(token);
     const checkIfTokenValid = async () => {
       if (token) {
         try {
-          const res = await axios.get(
-            `${api}/protected/me`,
-            { headers: { token: token } }
-          );
+          const res = await axios.get(`${api}/protected/me`, {
+            headers: { token: token },
+          });
           if (res.status === 200) {
             setIsAuthenticated(true);
-            setUserName(res.data.username)
-            setEMail(res.data.email)
-            setPicture(res.data.picture)
-            console.log(res)
+            setUserName(res.data.username);
+            setEMail(res.data.email);
+            setPicture(res.data.picture);
+            console.log(res);
           }
         } catch (error) {
           console.log(error);
-          
         }
       } else {
         setIsAuthenticated(false);
       }
-      
     };
     checkIfTokenValid();
-    
   }, []);
-
-  
 
   return (
     <>
-    <div className="card-body text-center mt-5">
-      <img
-        src={picture ? picture : emptyProfilePicture}
-        alt="profilepic"
-        className="rounded-circle img-fluid"
-        style={{ width: "150px" }}
-        />
-        
-        <div className="container mx-auto text-center mt-5">
-          <label htmlFor="file-upload" className="custom-file-upload">
-            Add picture
-          </label>
-          <input id="file-upload" type="file" />
+      <div className="container-md text-center">
+        <div className="row">
+          <div className="col-sm-12 transparent-bg" style={{width:"85%", marginTop:"20%"}}>
+          
+              <div className="justify-content my-3 row">
+                <img
+                  src={picture ? picture : emptyProfilePicture}
+                  alt="profilepic"
+                  className="rounded-circle img-fluid mt-3 mx-auto"
+                  style={{ width: "150px" }}
+                />
+              </div>
+
+              <div className="text-center mb-3 row mx-auto btn">
+                <label htmlFor="file-upload" className="custom-file-upload labelbtn">
+                  Add picture
+                </label>
+                <input id="file-upload" type="file" />
+              </div>
+
+              <form className="text-center">
+                <div>
+                  <input className="my-3 form-control" value={userName} />
+                </div>
+                <br />
+                <div>
+                  <input type="email" className="my-3 form-control" value={eMail} />
+                </div>
+                <br />
+                <button type="button" className="btn mb-4">
+                  Edit profile
+                </button>
+              </form>
+            
+          </div>
         </div>
-        <form>
-          <input className="my-3" value={userName} />
-          <br />
-          <input className="my-3" value={eMail} />
-          <br />
-          <button type="button" className="btn">
-            Edit profile
-          </button>
-        </form>
       </div>
     </>
   );
