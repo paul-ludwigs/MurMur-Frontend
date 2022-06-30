@@ -42,7 +42,10 @@ function Profile() {
     <>
       <div className="container-md text-center">
         <div className="row">
-          <div className="col-sm-12 transparent-bg" style={{width:"85%", marginTop:"20%"}}>
+          <div className="text-center mt-3">
+          <h1 className="greeting-font">Your very own Profile:</h1>
+          </div>
+          <div className="col-sm-12 transparent-bg my-3" style={{width:"85%"}}>
           
               <div className="justify-content my-3 row">
                 <img

@@ -142,10 +142,13 @@ function Detail() {
     <>
     <ToastContainer />
       {(murmur && user) ? (
+        
         <div className="container-md transparent-bg mx-3 my-3">
+          <div>
+          <h1 className="cursive-font city-name">{(murmur.city.charAt(0).toUpperCase() + murmur.city.slice(1))}</h1>
           <div className="row">
             <div className="col-sm-12">
-              <h1 className="cursive-font city-name">{(murmur.city.charAt(0).toUpperCase() + murmur.city.slice(1))}</h1>
+              
             </div>
           </div>
           <div className="row">
@@ -219,6 +222,7 @@ function Detail() {
                 {downvotesCount}
               </button>
             </div>
+          </div>
           </div>
         </div>
       ) : console.log(murmur)}

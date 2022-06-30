@@ -98,8 +98,8 @@ function Create() {
   return (
     <>
     <ToastContainer />
-      <div className="text-center my-3 cursive-font">
-        <h1>Create a new MurMur!</h1>
+      <div className="text-center my-3 ">
+        <h1 className="greeting-font">Write your own MurMur!</h1>
       </div>
       
       <div className="container mx-auto">

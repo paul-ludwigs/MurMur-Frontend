@@ -47,11 +47,14 @@ function Search() {
     <>
     <div className="container mx-auto">
         <div className="row">
+          <div className="text-center">
+        <h1 className="greeting-font">
+            Hello there, {userName}!
+          </h1>
+          </div>
       <div className="col text-center my-2 mx-3 transparent-bg" style={{ padding: "1rem" }}>
         <div style={{ padding: "0.5rem" }}>
-          <h1 className="greeting-font">
-            Hi {userName},
-          </h1>
+          
           <p style={{ padding: "0.5rem" }}>
             Almost there!
             Down below you can use the field to enter the Cityname you might be interested in and our Database
