@@ -256,17 +256,17 @@ const Landingpage = () => {
             data-bs-ride="carousel"
           >
             <div
-              class="carousel-inner transparent-bg mb-3"
+              className="carousel-inner transparent-bg mb-3"
               style={{ margin: "0% 35%", padding: "10%" }}
             >
               <div class="carousel-item active">
-                <p>Over 10000 Tips</p>
+                <p className="carousel-font">Tips: 172500+</p>
               </div>
               <div class="carousel-item">
-                <p>17000 User</p>
+                <p className="carousel-font">Users: 17000+</p>
               </div>
               <div class="carousel-item">
-                <p>und noch etwas text</p>
+                <p className="carousel-font">Citys: 2800+</p>
               </div>
             </div>
             <button
@@ -333,8 +333,7 @@ const Landingpage = () => {
                 <img src="..." class="card-img-top" alt="..." />
                 <div class="card-body">
                   <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Create your own MurMurs and share your experiences with others!
                   </p>
                 </div>
               </div>
@@ -344,8 +343,7 @@ const Landingpage = () => {
                 <img src="..." class="card-img-top" alt="..." />
                 <div class="card-body">
                   <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Up- and Downvote MurMurs to help others find the essentials!
                   </p>
                 </div>
               </div>
@@ -355,8 +353,7 @@ const Landingpage = () => {
                 <img src="..." class="card-img-top" alt="..." />
                 <div class="card-body">
                   <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Create and customize your own Account, it's fast and easy!
                   </p>
                 </div>
               </div>
