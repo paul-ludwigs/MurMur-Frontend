@@ -203,7 +203,9 @@ form {
 .carousel-card{
 background-color: rgba(255, 255, 255, 0.678);
 }
-
+.carousel-font{
+  font-weight:bold
+}
 /* Searchpage */
 
 .carouselimg{
