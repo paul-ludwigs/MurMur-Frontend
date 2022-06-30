@@ -98,11 +98,15 @@ function Create() {
   return (
     <>
     <ToastContainer />
-      <div className="text-center mb-3">
+      <div className="text-center my-3 cursive-font">
         <h1>Create a new MurMur!</h1>
-        <h2>We are eager to hear about what you want to share!</h2>
       </div>
-      <div className="container transparent-bg">
+      
+      <div className="container mx-auto">
+        <div className="row">
+          <div className="col transparent-bg mx-3">            
+        <h5 className="mt-3">Go on then, we're super eager to learn what you've got to share!</h5>
+        <br/>
       <form onSubmit={handleSubmit}>
         <div className="text-center container mb-3 mx-auto">
           <label htmlFor="exampleFormControlInput1" className="form-label">
@@ -201,6 +205,8 @@ function Create() {
           </button>
         </div>
       </form>
+      </div>
+      </div>
       </div>
     </>
   );
