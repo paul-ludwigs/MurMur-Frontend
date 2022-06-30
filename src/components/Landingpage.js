@@ -41,12 +41,13 @@ const Landingpage = () => {
     <>
       <ToastContainer />
       <div className="container mx-auto text-center mt-3">
-        <p className="card-text mt-" style={{ padding: "0.5em" }}>
-          You don't know where to go yet or you are already at your destination
-          and want to discover more? No problem! Register in our app and learn
-          useful tips as well as warnings from other travelers. But you are also
-          welcome to share your experiences with others.
-        </p>
+        <div className="transparent-bg">          
+          <h1 className="px-2 pt-2">Hello and Welcome to MurMur!</h1>
+          <h4 className="mb-3">We're so happy to have you!</h4>
+          <p className="px-2">Are you looking to plan your next vacation, trip, adventure?
+             Maybe you're looking for advice, tips or secrets regarding specific Destinations?</p>
+          <h5 className="px-2 pb-2">Say no more! We've got you covered!</h5>          
+        </div>
 
         <div
           id="carouselExampleIndicators"
@@ -290,6 +291,18 @@ const Landingpage = () => {
             ></span>
             <span className="visually-hidden">Next</span>
           </button>
+        </div>
+
+        <div className="transparent-bg">          
+          <h2 className="px-2 pt-2">MurMur is an App from the Community, for the Community!</h2>
+          <p className="px-2 pb-2">We firmly believe you cannot find better advice, tips, secrets or even warnings for your
+          next travel destination, than by people who've been there before! Be it from locals or fellow travelers, our Database is bursting
+          with tips for you! </p><p>Not only does our Community author the tips themselves, but our up-/down vote system for each tip gives everyone
+          a voice in helping make the best tips stand out the most!</p>
+                    
+        </div>
+        <div className="transparent-bg">          
+          <h2 className="px-2 pt-2">What MurMur has got to offer:</h2>       
         </div>
 
 
