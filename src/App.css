@@ -182,7 +182,9 @@ form {
   color: white;
 }
 .detail-tag {
-  background-color: #492cb2;
+  color: white;
+  background-color: #2ea88f;
+  border-color: black;
   margin: .2rem;
   margin-top: .5rem;
   text-align: center;
@@ -192,8 +194,7 @@ form {
 }
 .detail-tag-text {
   margin: 0;
-
-  color: black;
+  color: white;
 }
 
 
