@@ -57,7 +57,7 @@ function Profile() {
               </div>
 
               <div className="text-center mb-3 row mx-auto btn" style={{ width: "25%"}}>
-                <label htmlFor="file-upload" className="custom-file-upload labelbtn">
+                <label htmlFor="file-upload">
                   pic
                 </label>
                 <input id="file-upload" type="file" />
