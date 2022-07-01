@@ -55,7 +55,7 @@ function Profile() {
                 />
               </div>
 
-              <div className="text-center mb-3 row mx-auto btn" style={{ width: "25%"}}>
+              <div className="text-center mb-3 row mx-auto btn" style={{ width: "25%", minWidth: "7rem"}}>
                 <label htmlFor="file-upload">
                   add pic
                 </label>
@@ -64,14 +64,14 @@ function Profile() {
 
               <form className="text-center">
                 <div>
-                  <input className="my-3 form-control mx-auto" value={userName} style={{ width: "50%"}} />
+                  <input className="my-3 form-control mx-auto" value={userName} style={{ width: "50%", minWidth: "15rem"}} />
                 </div>
                 <br />
                 <div>
-                  <input type="email" className="my-3 form-control mx-auto" value={eMail} style={{ width: "50%"}}/>
+                  <input type="email" className="my-3 form-control mx-auto" value={eMail} style={{ width: "50%", minWidth: "15rem"}}/>
                 </div>
                 <br />
-                <button type="button" className="btn mb-4 mx-auto" style={{ width: "25%"}}>
+                <button type="button" className="btn mb-4 mx-auto" style={{ width: "25%", minWidth: "7rem"}}>
                   Edit
                 </button>
               </form>
