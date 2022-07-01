@@ -12,7 +12,7 @@ function Search() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log(token);
+    
     const checkIfTokenValid = async () => {
       if (token) {
         try {
@@ -22,7 +22,7 @@ function Search() {
           if (res.status === 200) {
             setIsAuthenticated(true);
             setUserName(res.data.username);
-            console.log(res);
+            
           }
         } catch (error) {
           console.log(error);
@@ -40,7 +40,6 @@ function Search() {
     e.preventDefault();
     let cityname = e.target[0].value;
     cityname = cityname.toLowerCase();
-    console.log(cityname);
     navigate(`${cityname}`);
   };
   return (

@@ -14,7 +14,7 @@ function Profile() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log(token);
+    
     const checkIfTokenValid = async () => {
       if (token) {
         try {
@@ -25,8 +25,7 @@ function Profile() {
             setIsAuthenticated(true);
             setUserName(res.data.username);
             setEMail(res.data.email);
-            setPicture(res.data.picture);
-            console.log(res);
+            setPicture(res.data.picture); 
           }
         } catch (error) {
           console.log(error);
@@ -58,7 +57,7 @@ function Profile() {
 
               <div className="text-center mb-3 row mx-auto btn" style={{ width: "25%"}}>
                 <label htmlFor="file-upload">
-                  pic
+                  add pic
                 </label>
                 <input id="file-upload" type="file" />
               </div>

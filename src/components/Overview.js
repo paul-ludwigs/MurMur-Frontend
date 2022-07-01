@@ -34,7 +34,6 @@ function Overview() {
           setIsFetching(false);
         })
         .catch((error) => {
-          console.log(error);
           setIsFetching(false);
         });
     }

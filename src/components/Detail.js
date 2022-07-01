@@ -9,12 +9,11 @@ import 'react-toastify/dist/ReactToastify.css';
 function Detail() {
   const api = process.env.REACT_APP_API_URL;
   const { id } = useParams();
-  let tagClass;
+  
 
   const [murmur, setMurmur] = useState(null);
   const [user, setUser] = useState(null);
   const [userName, setUsername] = useState("");
-  const [userId, setUserId] = useState("");
   const [upvoteActive, setUpvoteActive] = useState(false);
   const [downvoteActive, setDownvoteActive] = useState(false);
   const [upvotesCount, setUpvotesCount] = useState();
@@ -43,7 +42,7 @@ function Detail() {
           { headers: { token: token } }
           
           );
-          console.log(loggedInUser);
+          
           setUsername(loggedInUser.data.username);
       }
       else {
@@ -57,13 +56,13 @@ function Detail() {
       setUser(userData.data);
       setUpvotesCount(data.upvotes.length);
       setDownvotesCount(data.downvotes.length);
-      console.log(data.upvotes);
+     
 
       let tagClasses = [];
       data.tags.map(tag => {
          tagClasses.push(tags.find(element => element.name == tag).classname);
       })
-      console.log(tagClasses);
+      
       setTagClassnames(tagClasses);
 
       if(isAuthenticated)
@@ -89,7 +88,7 @@ function Detail() {
     else
     {
       setUpvoteActive((current) => !current);
-      console.log(upvoteActive);
+      
       const fetching = async () => {
         await   
         axios
