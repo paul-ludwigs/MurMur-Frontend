@@ -24,7 +24,7 @@ const Landingpage = () => {
     } else {
       try {
         const res = await axios.post(`${api}/users/login`, loginData);
-        console.log(res);
+        
         const token = res.headers.authorization;
         localStorage.setItem("token", token);
         setIsAuthenticated(true);
