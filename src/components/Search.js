@@ -45,7 +45,7 @@ function Search() {
   };
   return (
     <>
-    <div className="container mx-auto">
+    <div className="container">
         <div className="row">
           <div className="text-center">
         <h1 className="greeting-font">
