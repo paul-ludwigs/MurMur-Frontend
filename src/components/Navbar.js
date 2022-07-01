@@ -35,8 +35,8 @@ function Navbar() {
           <img
                   src={require("../images/Logo.png")}
                   alt="logo"
-                  className="logo"
-                /><p className="logoname">MurMur</p>
+                  className="logo mt-3"
+                /><p className="logoname mt-3">MurMur</p>
           </NavLink>
         
 
