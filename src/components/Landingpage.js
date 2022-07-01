@@ -407,40 +407,32 @@ const Landingpage = () => {
               <h5 className="mt-3">Let's log you in, shall we?</h5>
 
               {/* Form */}
-              <form onSubmit={handleSubmit} id="loginformular">
-                <div className="mb-2 row mt-3">
-                  <label
-                    htmlFor="staticEmail"
-                    className="col-sm-2 col-form-label"
-                  >
-                    Email
-                  </label>
+              <form onSubmit={handleSubmit} id="loginformular" >
+                <div className="mb-2 row mt-3 mx-auto" style={{ width: "75%"}}>
+                  
                   <div className="col-sm-10">
                     <input
                       type="email"
                       className="form-control"
                       id="staticEmail"
                       placeholder="email@example.com"
+                      
                     />
                   </div>
                 </div>
-                <div className="mb-3 row">
-                  <label
-                    htmlFor="inputPassword"
-                    className="col-sm-2 col-form-label"
-                  >
-                    Password
-                  </label>
+                <div className="mb-3 row mx-auto" style={{ width: "75%"}}>
+                  
                   <div className="col-sm-10">
                     <input
                       type="password"
                       className="form-control"
                       id="inputPassword"
+                      placeholder="password"
                     />
                   </div>
                 </div>
 
-                <button type="submit" className="btn btn-info mb-3 mt-3">
+                <button type="submit" className="btn btn-info mb-3 mt-3 mx-auto" style={{ width: "25%"}}>
                   Sign-In
                 </button>
               </form>

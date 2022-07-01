@@ -11,12 +11,7 @@ input[type="file"] {
   display: none;
 }
 
-.custom-file-upload {
-  border: 1px solid rgb(73, 68, 68);
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-}
+
 
 
 .App {
@@ -218,6 +213,4 @@ background-color: rgba(255, 255, 255, 0.678);
 
 /* Profile */
 
-.labelbtn{
-  border: none;
-}
+
