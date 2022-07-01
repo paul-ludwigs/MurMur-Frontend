@@ -40,9 +40,10 @@ const Landingpage = () => {
   return (
     <>
       <ToastContainer />
-      <div className="container mx-auto text-center mt-3">
-        <div className="transparent-bg">
-          <h1 className="px-2 pt-2">Hello and Welcome to MurMur!</h1>
+      <div className="container mx-auto text-center mt-2">
+      <h1 className="px-2 mb-4 greeting-font">Hello and Welcome to MurMur!</h1>
+        <div className="transparent-bg mt-3">
+          
           <h4 className="mb-3">We're so happy to have you!</h4>
           <p className="px-2">
             Are you looking to plan your next vacation, trip, adventure? Maybe

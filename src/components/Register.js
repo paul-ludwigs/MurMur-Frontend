@@ -50,16 +50,20 @@ function Register() {
     <>
     <ToastContainer />
       <div className="container-md text-center">
-        <div className="row">
+        <div className="row my-3">
           <div className="col-sm-12">
+          <div className="text-center">
+        <h1 className="greeting-font">
+            Register
+          </h1>
+          </div>
             
           <div className="plane">
             <div
-              className="d-flex justify-content-center mt-5 transparent-bg mb-5 "
-              
+              className="d-flex justify-content-center my-2 transparent-bg mb-3 "              
             >
               <form onSubmit={handleSubmit} className="mt-5 mb-3">
-                <div className="text-center mb-3 row mb-20">
+                <div className="text-center mb-3 row">
                   <label
                     htmlFor="Accountname"
                     className="col-sm-2 col-form-label"
