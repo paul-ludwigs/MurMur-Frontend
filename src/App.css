@@ -33,6 +33,7 @@ form {
 .transparent-bg{
   border-radius:15px;
   width: auto;
+  max-width: 45rem;
   height: 70%;
   margin:auto;
   text-align: center;
