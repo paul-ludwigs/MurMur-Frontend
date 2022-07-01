@@ -15,9 +15,9 @@ input[type="file"] {
 
 
 .App {
-    /* gradient? */
-  font-family: 'Raleway', sans-serif;
-  color: #333;
+  /* gradient? */
+font-family: 'Raleway', sans-serif;
+color: #333;
 }
 
 form {
@@ -37,7 +37,7 @@ form {
 
 .plane{
   background: url(https://i.giphy.com/media/IdmhVqdlIvpj3EalKg/giphy.webp); 
-  /* background-position: left-top; */
+  background-position: left bottom;
   background-repeat: no-repeat;
   padding:20px;
   background-attachment: fixed;
@@ -211,6 +211,6 @@ background-color: rgba(255, 255, 255, 0.678);
   object-fit: fill;
 }
 
-/* Profile */
+
 
 
