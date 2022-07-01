@@ -14,7 +14,7 @@ function Create() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log(token);
+    
     const checkIfTokenValid = async () => {
       if (token) {
         try {
@@ -35,7 +35,7 @@ function Create() {
     checkIfTokenValid();
   }, []);
 
-  console.log(userId)
+ 
 
   const handleSubmit = function (event) {
     event.preventDefault();
@@ -65,7 +65,7 @@ function Create() {
 
     // find current date:
     const today = new Date(Date.now()).toISOString();
-    console.log(today);
+    
 
     // enforce at least one tag is toggled and both input fields are filled out, then post request:
     if (postArray.length == 0 || !cityName || !tip) {

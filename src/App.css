@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Raleway:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+                                       /* GENERAL */
 
-/* GENERAL */
+ @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Raleway:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
+.App {
+/* gradient? */
+font-family: 'Raleway', sans-serif;
+color: #333;
+}
 
 a {
   color:black;
@@ -9,15 +14,6 @@ a {
 
 input[type="file"] {
   display: none;
-}
-
-
-
-
-.App {
-  /* gradient? */
-font-family: 'Raleway', sans-serif;
-color: #333;
 }
 
 form {
@@ -42,17 +38,15 @@ form {
   padding:20px;
   background-attachment: fixed;
   width:auto;
-  height:auto;
-  
+  height:auto; 
 }
 
+/* Wird diese Klasse überhaupt benutzt??? */
 .register{
   color: black;
   min-height: 2rem;
   margin-bottom: 1rem;
 }
-
-
 
 .cursive-font {
   font-family: 'Dancing Script', cursive;
@@ -74,11 +68,12 @@ form {
   /* gradient? */
   color: black;
   background-color: #37debc;
-  
 }
+
 .tag-button{
   min-width: 9rem !important;
 }
+
 .btn{
   border-color: rgb(104, 104, 104);
   --bs-btn-font-weight: 600;
@@ -94,11 +89,11 @@ form {
   --bs-btn-active-bg: #2ea88f;
   --bs-btn-active-border-color: black;
 };
+
 .btn:focus{
     outline: none;
     box-shadow:none;
 };
-
 
 .card-city {
   background-color: #79C858;
@@ -110,6 +105,59 @@ form {
 
 .tags:active {
   color: #F0C55D;
+}
+
+                                  /* NAVBAR */
+
+.navbar {
+  background-color: #37debc;
+  /* padding: 1rem; */
+  font-size: medium;
+}
+
+.navbar-brand {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.logo{
+  float:left;
+}
+
+.logoname{
+  font-size: xx-large;
+  float:left;
+}
+
+                               /* OVERVIEW */
+
+
+                                /* CREATE */
+
+.crbutton {
+  width:8rem;
+  border-radius: 20px;
+};
+
+                               /* DETAIL */
+
+.murmur-text {
+  min-height: 10rem;
+  border: 1px solid #333;
+  background-color: beige;
+}
+
+.vote-button {
+  color: gray;
+  font-size: 2rem;
+  padding-right: .1em;
+}
+.upvote-button {
+  color: white;
+}
+.downvote-button {
+  color: white;
 }
 
 .upvote {
@@ -128,55 +176,6 @@ form {
   color: #EEA891;
 }
 
-/* NAVBAR */
-.navbar {
-  background-color: #37debc;
-  /* padding: 1rem; */
-  font-size: medium;
-}
-.navbar-brand {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-}
-
-.logo{
-  float:left;
-}
-
-.logoname{
-  font-size: xx-large;
-  float:left;
-}
-/* OVERVIEW */
-
-
-/* CREATE */
-
-.crbutton {
-  width:8rem;
-  border-radius: 20px;
-};
-
-
-/* DETAIL */
-.murmur-text {
-  min-height: 10rem;
-  border: 1px solid #333;
-  background-color: beige;
-}
-
-.vote-button {
-  color: gray;
-  font-size: 2rem;
-  padding-right: .1em;
-}
-.upvote-button {
-  color: white;
-}
-.downvote-button {
-  color: white;
-}
 .detail-tag {
   color: white;
   background-color: #2ea88f;
@@ -193,8 +192,7 @@ form {
   color: white;
 }
 
-
-/* Landingpage */
+                                  /* Landingpage */
 
 .carousel-card{
 background-color: rgba(255, 255, 255, 0.678);
@@ -202,7 +200,8 @@ background-color: rgba(255, 255, 255, 0.678);
 .carousel-font{
   font-weight:bold
 }
-/* Searchpage */
+
+                                    /* Searchpage */
 
 .carouselimg{
   margin:auto;
@@ -210,6 +209,7 @@ background-color: rgba(255, 255, 255, 0.678);
   max-width: 400px;
   object-fit: fill;
 }
+
 
 
 
