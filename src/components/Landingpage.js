@@ -403,7 +403,7 @@ const Landingpage = () => {
         {/* Login Form box: */}
         <div className="container">
           <div className="row">
-            <div className="col transparent-bg mx-3 my-2">
+            <div className="col transparent-bg mx-auto my-2">
               <h5 className="mt-3">Let's log you in, shall we?</h5>
 
               {/* Form */}

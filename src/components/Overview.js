@@ -172,6 +172,7 @@ function Overview() {
           {filteredData.map(
             (item, index) =>
               index < mumurPerPage && (
+                <div className="d-flex justify-content-center">
                 <div
                   className="card transparent-bg my-2 mx-3"
                   style={{ width: "18rem;" }}
@@ -198,7 +199,7 @@ function Overview() {
                       Select
                     </Link>
                   </div>
-              
+                  </div>
               )
           )}
           {mumurPerPage < filteredData.length && (
