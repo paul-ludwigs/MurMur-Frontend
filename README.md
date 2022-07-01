@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# MurMur - Travel Guide
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    Welcome to MurMur, our community narrated travel guide.
 
-## Available Scripts
+    Find us @ https://murmur-travel.netlify.app/
 
-In the project directory, you can run:
+## MurMur currently allows for a number of features:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Log-in / Register / Authentification
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    You can create your own Account and log into existing ones, granting you access to otherwise restricted features.
 
-### `npm test`
+### Search for Travel-tips (called MurMurs), filter results
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    You can search for Travel-tips by entering the Cityname you might be interested in, filter your results via Buttons and advance through your results with the help of the 'show more' pagination button.
 
-### `npm run build`
+### Bring up a Detail-Page for the Travel-Tip you selected
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    Following this route you can view additional Information regarding the Travel-Tip you selected. (Author, Date-of-creation, ...)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Up- and DownVote Travel-Tips -- requires Authentication
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    MurMur's content is community narrated. You can up or downvote existing Travel-Tips and help the community weed out the 'bad' ones from the really helpful tips.
 
-### `npm run eject`
+### Create your own Travel-Tip -- requires Authentication
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    You can write your own Travel-Tip and publish it for the community to see.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### View your Profile-Page -- requires Authentication
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    You can look into what information the Database holds for your account.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Planned Features
 
-## Learn More
+    - Ability to upload pictures for your Travel-Tips
+    - Ability to insert the Address for your Tip and display a Map+Pin
+    - Ability to change your Profile Information, including Profile-Pictures
+    - Track accumulated received UpVotes per Account, thus enabling a reward system
+    - Implement Web-Shop so Users can buy Rewards for accumulated received UpVotes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technologies used:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    "axios": "^0.27.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^9.0.5",
+    "react-scroll": "^1.8.7",
+    "react-spinners": "^0.13.2",
 
-### Code Splitting
+### Backend-API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   github @ https://github.com/Phil243/MurMur-Backend
 
-### Analyzing the Bundle Size
+   hosted @ https://murmur-backend.herokuapp.com/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributers
 
-### Making a Progressive Web App
+Mehtap, Paul, Philipp
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Special Thanks
 
-### Advanced Configuration
+Julia
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
