@@ -1,8 +1,8 @@
 # MurMur - Travel Guide
 
-    Welcome to MurMur, our community narrated travel guide.
+Welcome to MurMur, our community narrated travel guide.
 
-    Find us @ https://murmur-travel.netlify.app/
+Find us @ https://murmur-travel.netlify.app/
 
 ## MurMur currently allows for a number of features:
 
