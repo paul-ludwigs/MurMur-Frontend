@@ -56,24 +56,24 @@ function Profile() {
                 />
               </div>
 
-              <div className="text-center mb-3 row mx-auto btn">
+              <div className="text-center mb-3 row mx-auto btn" style={{ width: "25%"}}>
                 <label htmlFor="file-upload" className="custom-file-upload labelbtn">
-                  Add picture
+                  pic
                 </label>
                 <input id="file-upload" type="file" />
               </div>
 
               <form className="text-center">
                 <div>
-                  <input className="my-3 form-control" value={userName} />
+                  <input className="my-3 form-control mx-auto" value={userName} style={{ width: "50%"}} />
                 </div>
                 <br />
                 <div>
-                  <input type="email" className="my-3 form-control" value={eMail} />
+                  <input type="email" className="my-3 form-control mx-auto" value={eMail} style={{ width: "50%"}}/>
                 </div>
                 <br />
-                <button type="button" className="btn mb-4">
-                  Edit profile
+                <button type="button" className="btn mb-4 mx-auto" style={{ width: "25%"}}>
+                  Edit
                 </button>
               </form>
             
