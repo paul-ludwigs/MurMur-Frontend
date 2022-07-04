@@ -48,6 +48,10 @@ form {
   margin-bottom: 1rem;
 }
 
+.card{
+  min-width: 20rem;
+}
+
 .cursive-font {
   font-family: 'Dancing Script', cursive;
   color: black;
@@ -76,6 +80,7 @@ form {
 
 .btn{
   border-color: rgb(104, 104, 104);
+  min-width: 8rem;
   --bs-btn-font-weight: 600;
   --bs-btn-color: black;
   --bs-btn-bg: #37debc;
