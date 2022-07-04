@@ -82,11 +82,11 @@ form {
   border-color: rgb(104, 104, 104);
   --bs-btn-font-weight: 600;
   --bs-btn-color: black;
-  --bs-btn-bg: #37debc;
-  --bs-btn-border-color: #37debc;
+  --bs-btn-bg: #7addc9;
+  --bs-btn-border-color: #7addc9;
   --bs-btn-border-radius: .5rem;
   --bs-btn-hover-color: black;
-  --bs-btn-hover-bg: #45ffda;
+  --bs-btn-hover-bg: #7addc9;
   --bs-btn-hover-border-color: black;
   --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
   --bs-btn-active-color: white;
@@ -114,7 +114,7 @@ form {
                                   /* NAVBAR */
 
 .navbar {
-  background-color: #37debc;
+  background-color: #7addc9;
   /* padding: 1rem; */
   font-size: medium;
 }
