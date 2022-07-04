@@ -189,7 +189,7 @@ function Overview() {
                       <div className="d-flex justify-content-between">
                         <p className="mx-2">{item.tags}</p>
 
-                        <p className="mx-2">{item.upvotes.length}</p>
+                        <p className="mx-2"><i className="fa-solid fa-thumbs-up">{item.upvotes.length}</i></p>
                       </div>
                     </div>
 
