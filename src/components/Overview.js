@@ -23,6 +23,15 @@ function Overview() {
   let indexArray = [];
   let filteredObjects = [];
 
+  const tags = [
+    { name: "Food+Drink", classname: "fa-solid fa-utensils"},
+    { name: "Location", classname: "fa-solid fa-location-dot"},
+    { name: "Sport+Activity", classname: "fa-solid fa-volleyball"},
+    { name: "Event", classname: "fa-solid fa-calendar-check"},
+    { name: "General", classname: "fa-solid fa-cubes-stacked"},
+    { name: "Warning", classname: "fa-solid fa-skull-crossbones"},
+  ];
+
   //fetch data in effect:
   useEffect(() => {
     if (data.length <= 0) {
@@ -187,7 +196,12 @@ function Overview() {
                   
                     <div className="row">
                       <div className="d-flex justify-content-between">
-                        <p className="mx-2">{item.tags}</p>
+                      {item.tags.map((tag, index) => (
+              <>
+              {/* {tagClass = tags.find(element => element.name == tag)} */}
+                <i className={tags[index].classname + " mx-2 mt-2"}></i>
+              </>
+            ))}
 
                         <p className="mx-2"><i className="fa-solid fa-thumbs-up">{item.upvotes.length}</i></p>
                       </div>
