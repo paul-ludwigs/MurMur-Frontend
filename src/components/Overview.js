@@ -174,7 +174,9 @@ function Overview() {
       <br />
 
       {isFetching ? (
-        <HashLoader color="#41caea" />
+        <div className="d-flex justify-content-center">
+          <HashLoader className="a" color="#41caea" />
+        </div>
       ) : filteredData.length > 0 ? (
         <>
           {filteredData.map(
@@ -216,13 +218,13 @@ function Overview() {
               )
           )}
           {mumurPerPage < filteredData.length && (
-            <div>
-              <button onClick={showMoreHandler}>Show more</button>
+            <div className="text-center">
+              <button className="btn mx-auto mb-2" onClick={showMoreHandler}>Show more</button>
             </div>
           )}
         </>
       ) : (
-        <div> No match found...</div>
+        <div className="text-center"> No match found...</div>
       )}
     </>
   );
