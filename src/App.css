@@ -80,7 +80,6 @@ form {
 
 .btn{
   border-color: rgb(104, 104, 104);
-  min-width: 8rem;
   --bs-btn-font-weight: 600;
   --bs-btn-color: black;
   --bs-btn-bg: #37debc;
