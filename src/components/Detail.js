@@ -127,7 +127,10 @@ function Detail() {
     <>
       <ToastContainer />
       {murmur && user ? (
-        <div className="container" style={{}}>
+        <div className="container" style={{display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+        }}>
           <div className="row">
             <div className="col-12 col-sm-12">
               <div>
@@ -135,7 +138,8 @@ function Detail() {
                   {murmur.city.charAt(0).toUpperCase() + murmur.city.slice(1)}
                 </h1>
               </div>
-              <div className="container-md transparent-bg mx-3 my-3">
+              <div className="transparent-bg"> 
+              <div className="container-md  mx-3 my-3">
                 <div className="row">
                   <div className="col-sm-12"></div>
                 </div>
@@ -214,6 +218,7 @@ function Detail() {
                       ></i>
                       {downvotesCount}
                     </button>
+                    </div>
                   </div>
                 </div>
               </div>
