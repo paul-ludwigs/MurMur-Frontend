@@ -191,7 +191,7 @@ function Overview() {
                   {item.picture && (
                     <img
                       src={item.picture}
-                      className="card-img-top"
+                      className="card-img-top overview-image"
                       alt="city_picture"
                     />
                   )}
