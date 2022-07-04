@@ -25,7 +25,7 @@ form {
   border-radius:15px;
   width: auto;
   max-width: 45rem;
-  height: 70%;
+  height: auto;
   margin:auto;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.678);
