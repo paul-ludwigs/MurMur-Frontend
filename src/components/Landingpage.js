@@ -52,6 +52,7 @@ const Landingpage = () => {
           </p>
           <h5 className="px-2 pb-2">Say no more! We've got you covered!</h5>
         </div>
+
         {/* First carousel */}
         <div
           id="carouselExampleIndicators"
@@ -227,6 +228,26 @@ const Landingpage = () => {
         </div>
 
         <div className="transparent-bg">
+          <h2 className="px-2 py-2">What MurMur has got to offer:</h2>
+        </div>
+
+       {/* second carousel */}
+
+      <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner" data-interval="500">
+          <div class="carousel-item active my-3">      
+              <p className="carousel-onlytxt text-center py-4">8400+ MurMurs</p>      
+          </div>
+          <div className="carousel-item  my-3">
+            <p className="carousel-onlytxt py-4">1250+ Cities</p>
+          </div>
+          <div className="carousel-item  my-3">
+            <p className="carousel-onlytxt py-4">14.300+ User</p>
+          </div>
+        </div>
+      </div>
+
+        <div className="transparent-bg">
           <h2 className="px-2 pt-2">
             MurMur is an App from the Community, for the Community!
           </h2>
@@ -242,88 +263,6 @@ const Landingpage = () => {
             make the best tips stand out the most!
           </p>
         </div>
-
-        {/* second carousel */}
-        <div
-          id="carouselExampleIndicators"
-          className="carousel slide"
-          data-bs-ride="true"
-        >
-          <div
-            id="carouselExampleControls"
-            className="carousel"
-            data-bs-ride="carousel"
-          >
-            <div
-              className="carousel-inner transparent-bg mb-3"
-              style={{ margin: "0% 35%", padding: "10%" }}
-            >
-              <div className="carousel-item active">
-                <p className="carousel-font">Tips: 172500+</p>
-              </div>
-              <div className="carousel-item">
-                <p className="carousel-font">Users: 17000+</p>
-              </div>
-              <div className="carousel-item">
-                <p className="carousel-font">Citys: 2800+</p>
-              </div>
-            </div>
-            <button
-              className="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExampleControls"
-              data-bs-slide="prev"
-            >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button
-              className="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExampleControls"
-              data-bs-slide="next"
-            >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Next</span>
-            </button>
-          </div>
-
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev"
-          >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide="next"
-          >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
-
-        <div className="transparent-bg">
-          <h2 className="px-2 pt-2">What MurMur has got to offer:</h2>
-        </div>
-
         {/* third carousel */}
 
         <div

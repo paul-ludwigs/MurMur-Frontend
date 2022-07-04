@@ -205,6 +205,16 @@ background-color: rgba(255, 255, 255, 0.678);
 .carousel-font{
   font-weight:bold
 }
+.carousel-onlytxt{
+  font-size: xx-large;
+  font-style: italic;
+  border-radius:100%;
+  width: 10rem;
+  height: 10rem;
+  margin:auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.678);
+}
 
                                     /* Searchpage */
 
