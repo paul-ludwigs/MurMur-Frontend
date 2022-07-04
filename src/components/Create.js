@@ -128,7 +128,6 @@ function Create() {
             className="tag-button crbutton btn btn-sm btn-primary mt-2 px-1"
             data-bs-toggle="button"
             autocomplete="off"
-            aria-pressed="true"
           ><div className="fa-solid fa-utensils pe-2"></div>
             Food+Drink
           </button>
@@ -158,7 +157,6 @@ function Create() {
             className="tag-button crbutton btn btn-sm btn-primary mt-2 ms-1"
             data-bs-toggle="button"
             autocomplete="off"
-            aria-pressed="true"
           ><div className="fa-solid fa-calendar-check pe-2"></div>
             Event
           </button>
