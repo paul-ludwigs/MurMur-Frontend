@@ -160,8 +160,8 @@ function Detail() {
 
                 <div className="row justify-content-center mt-5">
                   <div className="col-sm-12 text-center">
-                    <p>{murmur.date}</p>
-                    {console.log(murmur)}
+                    <p>{murmur.date.slice(0,10).replaceAll( "-" , ".")}</p>
+                    
                   </div>
                   {murmur.picture && (
                     <div className="col-11 col-sm-8 text-center p-0">
