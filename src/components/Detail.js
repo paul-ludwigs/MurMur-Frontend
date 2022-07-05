@@ -138,8 +138,8 @@ function Detail() {
                   {murmur.city.charAt(0).toUpperCase() + murmur.city.slice(1)}
                 </h1>
               </div>
-              <div className="transparent-bg text-center"> 
-              <div className="container" >
+              <div className="transparent-bg text-center "> 
+              <div className="container"  style={{minWidth:"19rem"}}>
                 
 
                 <div className="col-12 col-sm-12">
