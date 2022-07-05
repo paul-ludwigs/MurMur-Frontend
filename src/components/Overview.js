@@ -22,6 +22,7 @@ function Overview() {
   // create helper arrays for filter
   let indexArray = [];
   let filteredObjects = [];
+  let taggie;
 
   const tags = [
     { name: "Food+Drink", classname: "fa-solid fa-utensils"},
@@ -199,9 +200,10 @@ function Overview() {
                     <div className="row">
                       <div className="d-flex justify-content-between">
                       {item.tags.map((tag, index) => (
-              <>
-              {/* {tagClass = tags.find(element => element.name == tag)} */}
-                <i className={tags[index].classname + " mx-2 mt-2"}></i>
+                        <>
+                        {/* {taggie = tags.findIndex(element => element.name == tag)} */}
+              {console.log(taggie)}
+                <i className={tags[tags.findIndex(element => element.name == tag)].classname + " mx-2 mt-2"}></i>
               </>
             ))}
 

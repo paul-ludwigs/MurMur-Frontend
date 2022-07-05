@@ -8,10 +8,11 @@ import "react-toastify/dist/ReactToastify.css";
 function Detail() {
   const api = process.env.REACT_APP_API_URL;
   const { id } = useParams();
+  const { isAuthenticated } = useContext(AuthContext);
 
   const [murmur, setMurmur] = useState(null);
   const [user, setUser] = useState(null);
-  const [userName, setUsername] = useState("");
+  const [userName, setUsername] = useState();
   const [upvoteActive, setUpvoteActive] = useState(false);
   const [downvoteActive, setDownvoteActive] = useState(false);
   const [upvotesCount, setUpvotesCount] = useState();
@@ -27,7 +28,6 @@ function Detail() {
     { name: "Warning", classname: "fa-solid fa-skull-crossbones" },
   ];
 
-  const { isAuthenticated } = useContext(AuthContext);
 
   useEffect(() => {
     const fetching = async () => {
@@ -74,7 +74,7 @@ function Detail() {
       }
     };
     fetching();
-  }, [api, id]);
+  }, [api, id, userName]);
 
   const handleUpvote = function (event) {
     if (!isAuthenticated) {
