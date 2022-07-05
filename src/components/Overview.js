@@ -23,6 +23,15 @@ function Overview() {
   let indexArray = [];
   let filteredObjects = [];
 
+  const tags = [
+    { name: "Food+Drink", classname: "fa-solid fa-utensils" },
+    { name: "Location", classname: "fa-solid fa-location-dot" },
+    { name: "Sport+Activity", classname: "fa-solid fa-volleyball" },
+    { name: "Event", classname: "fa-solid fa-calendar-check" },
+    { name: "General", classname: "fa-solid fa-cubes-stacked" },
+    { name: "Warning", classname: "fa-solid fa-skull-crossbones" },
+  ];
+
   //fetch data in effect:
   useEffect(() => {
     if (data.length <= 0) {
@@ -101,7 +110,8 @@ function Overview() {
               className="tag-button crbutton btn btn-sm btn-primary mt-2 px-1"
               data-bs-toggle="button"
               autocomplete="off"
-            ><div className="fa-solid fa-utensils pe-2"></div>
+            >
+              <div className="fa-solid fa-utensils pe-2"></div>
               Food+Drink
             </button>
             <button
@@ -110,7 +120,8 @@ function Overview() {
               className="tag-button crbutton btn btn-sm btn-primary mt-2 ms-1"
               data-bs-toggle="button"
               autocomplete="off"
-            ><div className="fa-solid fa-location-dot pe-2"></div>
+            >
+              <div className="fa-solid fa-location-dot pe-2"></div>
               Location
             </button>
           </div>
@@ -124,7 +135,8 @@ function Overview() {
               className="tag-button crbutton btn btn-sm btn-primary mt-2"
               data-bs-toggle="button"
               autocomplete="off"
-            ><div className="fa-solid fa-cubes-stacked pe-2"></div>
+            >
+              <div className="fa-solid fa-cubes-stacked pe-2"></div>
               General
             </button>
             <button
@@ -133,7 +145,8 @@ function Overview() {
               className="tag-button crbutton btn btn-sm btn-primary mt-2 ms-1"
               data-bs-toggle="button"
               autocomplete="off"
-            ><div className="fa-solid fa-skull-crossbones pe-2"></div>
+            >
+              <div className="fa-solid fa-skull-crossbones pe-2"></div>
               Warning
             </button>
           </div>
@@ -147,7 +160,8 @@ function Overview() {
               className="tag-button crbutton btn btn-sm btn-primary mt-2"
               data-bs-toggle="button"
               autocomplete="off"
-            ><div className="fa-solid fa-volleyball pe-2"></div>
+            >
+              <div className="fa-solid fa-volleyball pe-2"></div>
               Sport+Activity
             </button>
             <button
@@ -156,7 +170,8 @@ function Overview() {
               className="tag-button crbutton btn btn-sm btn-primary mt-2 ms-1"
               data-bs-toggle="button"
               autocomplete="off"
-            ><div className="fa-solid fa-calendar-check pe-2"></div>
+            >
+              <div className="fa-solid fa-calendar-check pe-2"></div>
               Event
             </button>
           </div>
@@ -165,50 +180,76 @@ function Overview() {
       <br />
 
       {isFetching ? (
-        <HashLoader color="#41caea" />
+        <div className="d-flex justify-content-center">
+          <HashLoader className="a" color="#41caea" />
+        </div>
       ) : filteredData.length > 0 ? (
         <>
           {filteredData.map(
             (item, index) =>
               index < mumurPerPage && (
                 <div className="d-flex justify-content-center">
-                <div
-                  className="card transparent-bg my-2 mx-3"
-                  style={{ width: "18rem;" }}
-                  key={index}
-                >
-                  {item.picture && (
-                    <img
-                      src={item.picture}
-                      className="card-img-top"
-                      alt="city_picture"
-                    />
-                  )}
-                  
+                  <div
+                    className="card transparent-bg my-2 mx-3"
+                    style={{ width: "18rem;" }}
+                    key={index}
+                  >
+                    {item.picture && (
+                      <img
+                        src={item.picture}
+                        className="card-img-top overview-image"
+                        alt="city_picture"
+                      />
+                    )}
+
                     <div className="row">
                       <div className="d-flex justify-content-between">
-                        <p className="mx-2">{item.tags}</p>
+                        <div>
+                          {item.tags.map((tag, index) => (
+                            <>
+                              <i
+                                className={
+                                  tags[
+                                    tags.findIndex(
+                                      (element) => element.name == tag
+                                    )
+                                  ].classname + " mx-2 mt-2"
+                                }
+                              ></i>
+                            </>
+                          ))}
+                        </div>
 
-                        <p className="mx-2">{item.upvotes.length}</p>
+                        <p className="mx-2">
+                          <i className="fa-solid fa-thumbs-up">
+                            {item.upvotes.length}
+                          </i>
+                        </p>
                       </div>
                     </div>
 
                     <p className="card-text">{item.tip}</p>
-                    <Link to={`${item._id}`} className="btn mx-auto mb-2" style={{ width: "25%"}}>
+                    <Link
+                      to={`${item._id}`}
+                      className="btn mx-auto mb-2"
+                      style={{ width: "25%" }}
+                    >
                       Select
                     </Link>
                   </div>
-                  </div>
+                </div>
               )
           )}
           {mumurPerPage < filteredData.length && (
-            <div>
-              <button onClick={showMoreHandler}>Show more</button>
+            <div className="text-center">
+              <button className="btn mx-auto mb-2" onClick={showMoreHandler}>
+                Show more
+              </button>
             </div>
           )}
         </>
       ) : (
-        <div> No match found...</div>
+        <div className="text-center"> No match found...</div>
       )}
     </>
   );
