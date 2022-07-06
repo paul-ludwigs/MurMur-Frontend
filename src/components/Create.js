@@ -152,7 +152,7 @@ console.log(image)
                       type="button"
                       className="tag-button crbutton btn btn-sm btn-primary mt-2 px-1"
                       data-bs-toggle="button"
-                      autocomplete="off"
+                      autoComplete="off"
                     >
                       <div className="fa-solid fa-utensils pe-2"></div>
                       Food+Drink
@@ -161,7 +161,7 @@ console.log(image)
                       type="button"
                       className="tag-button crbutton btn btn-sm btn-primary mt-2 ms-1"
                       data-bs-toggle="button"
-                      autocomplete="off"
+                      autoComplete="off"
                     >
                       <div className="fa-solid fa-location-dot pe-2"></div>
                       Location
@@ -175,7 +175,7 @@ console.log(image)
                       type="button"
                       className="tag-button crbutton btn btn-sm btn-primary mt-2"
                       data-bs-toggle="button"
-                      autocomplete="off"
+                      autoComplete="off"
                     >
                       <div className="fa-solid fa-volleyball pe-2"></div>
                       Sport+Activity
@@ -184,7 +184,7 @@ console.log(image)
                       type="button"
                       className="tag-button crbutton btn btn-sm btn-primary mt-2 ms-1"
                       data-bs-toggle="button"
-                      autocomplete="off"
+                      autoComplete="off"
                     >
                       <div className="fa-solid fa-calendar-check pe-2"></div>
                       Event
@@ -198,7 +198,7 @@ console.log(image)
                       type="button"
                       className="tag-button crbutton btn btn-sm btn-primary mt-2"
                       data-bs-toggle="button"
-                      autocomplete="off"
+                      autoComplete="off"
                     >
                       <div className="fa-solid fa-cubes-stacked pe-2"></div>
                       General
@@ -207,7 +207,7 @@ console.log(image)
                       type="button"
                       className="tag-button crbutton btn btn-sm btn-primary mt-2 ms-1"
                       data-bs-toggle="button"
-                      autocomplete="off"
+                      autoComplete="off"
                     >
                       <div className="fa-solid fa-skull-crossbones pe-2"></div>
                       Warning

@@ -183,14 +183,11 @@ function Detail() {
                 <div className="row">
                   <div className="col-xs-0 col-sm-2"></div>
                   {murmur.tags.map((tag, index) => (
-                    <>
-                      {/* {tagClass = tags.find(element => element.name == tag)} */}
-                      <div className="col-3 col-md-2 col-lg-1 detail-tag">
+                      <div className="col-3 col-md-2 col-lg-1 detail-tag" key={index}>
                         <i
                           className={tagClassnames[index] + " detail-tag-text "}
                         ></i>
                       </div>
-                    </>
                   ))}
                 </div>
                 <div className="row mt-5 justify-content-center">
@@ -231,7 +228,7 @@ function Detail() {
           </div>
         </div>
       ) : (
-        console.log(murmur)
+        <p>Loading...</p>
       )}
     </>
   );

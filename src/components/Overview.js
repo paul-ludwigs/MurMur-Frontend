@@ -109,7 +109,7 @@ function Overview() {
               type="button"
               className="tag-button crbutton btn btn-sm btn-primary mt-2 px-1"
               data-bs-toggle="button"
-              autocomplete="off"
+              autoComplete="off"
             >
               <div className="fa-solid fa-utensils pe-2"></div>
               Food+Drink
@@ -119,7 +119,7 @@ function Overview() {
               type="button"
               className="tag-button crbutton btn btn-sm btn-primary mt-2 ms-1"
               data-bs-toggle="button"
-              autocomplete="off"
+              autoComplete="off"
             >
               <div className="fa-solid fa-location-dot pe-2"></div>
               Location
@@ -134,7 +134,7 @@ function Overview() {
               type="button"
               className="tag-button crbutton btn btn-sm btn-primary mt-2"
               data-bs-toggle="button"
-              autocomplete="off"
+              autoComplete="off"
             >
               <div className="fa-solid fa-cubes-stacked pe-2"></div>
               General
@@ -144,7 +144,7 @@ function Overview() {
               type="button"
               className="tag-button crbutton btn btn-sm btn-primary mt-2 ms-1"
               data-bs-toggle="button"
-              autocomplete="off"
+              autoComplete="off"
             >
               <div className="fa-solid fa-skull-crossbones pe-2"></div>
               Warning
@@ -159,7 +159,7 @@ function Overview() {
               type="button"
               className="tag-button crbutton btn btn-sm btn-primary mt-2"
               data-bs-toggle="button"
-              autocomplete="off"
+              autoComplete="off"
             >
               <div className="fa-solid fa-volleyball pe-2"></div>
               Sport+Activity
@@ -169,7 +169,7 @@ function Overview() {
               type="button"
               className="tag-button crbutton btn btn-sm btn-primary mt-2 ms-1"
               data-bs-toggle="button"
-              autocomplete="off"
+              autoComplete="off"
             >
               <div className="fa-solid fa-calendar-check pe-2"></div>
               Event
@@ -188,10 +188,10 @@ function Overview() {
           {filteredData.map(
             (item, index) =>
               index < mumurPerPage && (
-                <div className="d-flex justify-content-center">
+                <div className="d-flex justify-content-center" key={index}>
                   <div
                     className="card transparent-bg my-2 mx-3"
-                    style={{ width: "18rem;" }}
+                    style={{ width: "18rem" }}
                     key={index}
                   >
                     {item.picture && (
@@ -206,17 +206,16 @@ function Overview() {
                       <div className="d-flex justify-content-between">
                         <div>
                           {item.tags.map((tag, index) => (
-                            <>
-                              <i
-                                className={
-                                  tags[
-                                    tags.findIndex(
-                                      (element) => element.name == tag
-                                    )
-                                  ].classname + " mx-2 mt-2"
-                                }
-                              ></i>
-                            </>
+                            <i
+                              key={index}
+                              className={
+                                tags[
+                                  tags.findIndex(
+                                    (element) => element.name == tag
+                                  )
+                                ].classname + " mx-2 mt-2"
+                              }
+                            ></i>
                           ))}
                         </div>
 
