@@ -159,7 +159,7 @@ function Detail() {
                       }
                       alt="profilepic"
                       className="rounded-circle img-fluid me-3 mt-4"
-                      style={{ width: "90px" }}
+                      style={{ width: "100px", height:"100px" }}
                     />
                     <label className="mt-4">{user.username}</label>{" "}
                   </div>
