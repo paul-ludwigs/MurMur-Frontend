@@ -193,7 +193,7 @@ const Landingpage = () => {
                     </svg>
                   </p>
 
-                  <Link to={`/search/tokyo/62c556cf4e755b1944db9d19`} className="btn">
+                  <Link to={`/search/milano/62c556cf4e755b1944db9d19`} className="btn">
                     Select
                   </Link>
                 </div>
