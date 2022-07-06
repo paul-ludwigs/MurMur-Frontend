@@ -230,18 +230,6 @@ console.log(image)
                 ></textarea>
               </div>
 
-              <div className="btn">
-                <label htmlFor="avatar">Choose a profile picture:</label>
-
-                <input
-                  type="file"
-                  id="avatar"
-                  name="avatar"
-                  accept="image/png, image/jpeg, image/jpg"
-                  onChange={onFileChange}
-                />
-              </div>
-
               <div className="text-center">
                 <button type="submit" className="btn btn-info mb-3 mt-3">
                   Submit
