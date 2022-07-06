@@ -11,6 +11,7 @@ function Register() {
 
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
 
+  //Submit for register form
   const handleSubmit = async function (event) {
     event.preventDefault();
     const accountName = event.target[0].value;
@@ -31,10 +32,7 @@ function Register() {
       };
 
       try {
-        const res = await axios.post(
-          `${process.env.REACT_APP_API_URL}/users/register`,
-          newUser
-        );
+        const res = await axios.post(`${api}/users/register`, newUser);
         const token = res.headers.authorization;
         localStorage.setItem("token", token);
         setIsAuthenticated(true);
