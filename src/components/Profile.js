@@ -45,23 +45,18 @@ function Profile() {
           <div className="text-center mt-3">
           <h1 className="greeting-font">Your very own Profile:</h1>
           </div>
-          <div className="col-sm-12 transparent-bg my-3 mx-auto" style={{width:"85%"}}>
+          <div className="col-sm-12 transparent-bg my-3 mx-auto" style={{width:"85%", height:"75vh"}}>
           
-              <div className="justify-content my-3 row">
+              <div className="justify-content my-5 row">
                 <img
                   src={picture ? picture : emptyProfilePicture}
                   alt="profilepic"
                   className="rounded-circle img-fluid mt-3 mx-auto"
-                  style={{ width: "150px" }}
+                  style={{ width: "150px", height:"150px" }}
                 />
               </div>
 
-              <div className="text-center mb-3 row mx-auto btn" style={{ width: "25%", minWidth: "7rem"}}>
-                <label htmlFor="file-upload">
-                  add pic
-                </label>
-                <input id="file-upload" type="file" />
-              </div>
+              
 
               <form className="text-center">
                 <div>
@@ -69,12 +64,9 @@ function Profile() {
                 </div>
                 <br />
                 <div>
-                  <input type="email" className="my-3 form-control mx-auto" value={eMail} style={{ width: "50%", minWidth: "15rem"}}/>
+                  <input type="email" className="mb-5 form-control mx-auto" value={eMail} style={{ width: "50%", minWidth: "15rem"}}/>
                 </div>
-                <br />
-                <button type="button" className="btn mb-4 mx-auto" style={{ width: "25%", minWidth: "7rem"}}>
-                  Edit
-                </button>
+                
               </form>
             
           </div>
