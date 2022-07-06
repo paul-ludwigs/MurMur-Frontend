@@ -8,7 +8,7 @@ function Search() {
   const [userName, setUserName] = useState("Stranger");
 
   const api = process.env.REACT_APP_API_URL;
-  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const { setIsAuthenticated } = useContext(AuthContext);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -43,7 +43,6 @@ function Search() {
   };
   return (
     <>
-    
       <div className="container-md text-center ">
         <div className="row my-3">
           <div className="col-sm-12">
@@ -54,7 +53,6 @@ function Search() {
               className="d-flex justify-content-centermy-2 mx-auto transparent-bg mb-5"
               style={{ padding: "1rem" }}
             >
-             
               <div style={{ padding: "0.5rem" }}>
                 <p style={{ padding: "0.5rem" }}>
                   Almost there! Down below you can use the field to enter the
@@ -162,9 +160,8 @@ function Search() {
               </div>
             </div>
           </div>
-          </div>
         </div>
-      
+      </div>
     </>
   );
 }
