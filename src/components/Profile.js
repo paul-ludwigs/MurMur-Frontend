@@ -26,7 +26,6 @@ function Profile() {
             setUserName(res.data.username);
             setEMail(res.data.email);
             setPicture(res.data.picture);
-            console.log(res.data) 
           }
         } catch (error) {
           console.log(error);
