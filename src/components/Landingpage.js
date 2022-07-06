@@ -280,7 +280,7 @@ const Landingpage = () => {
                 className="card transparent-bg my-3"
                 style={{ width: "18rem" }}
               >
-                <img src={require("../images/create-page.png")} className="card-img-top" alt="..." />
+                <img src={require("../images/create-page.png")} className="card-img-top mx-auto" alt="..." style={{maxHeight:"300px", maxWidth:"180px"}}/>
                 <div className="card-body">
                   <p className="card-text">
                     Create your own MurMurs and share your experiences with
@@ -294,7 +294,7 @@ const Landingpage = () => {
                 className="card transparent-bg my-3"
                 style={{ width: "18rem" }}
               >
-                <img src={require("../images/detail-page.png")} className="card-img-top" alt="..." />
+                <img src={require("../images/detail-page.png")} className="card-img-top mx-auto" alt="..." style={{maxHeight:"300px", maxWidth:"180px"}}/>
                 <div className="card-body">
                   <p className="card-text">
                     Check out what others shared, up- and downvote MurMurs to help others find the essentials!
@@ -307,7 +307,7 @@ const Landingpage = () => {
                 className="card transparent-bg my-3"
                 style={{ width: "18rem" }}
               >
-                <img src={require("../images/search-page.png")} className="card-img-top" alt="..." />
+                <img src={require("../images/search-page.png")} className="card-img-top mx-auto" alt="..." style={{maxHeight:"300px", maxWidth:"180px"}}/>
                 <div className="card-body">
                   <p className="card-text">
                     Enter city names and browse our database!
