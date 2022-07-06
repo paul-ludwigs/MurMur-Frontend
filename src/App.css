@@ -40,7 +40,7 @@ form {
 }
 
 .card {
-  min-width: 20rem;
+  min-width: 45rem;
 }
 
 .cursive-font {
@@ -142,8 +142,17 @@ card-img-top {
     height: 50vw;
     object-fit: cover;
   }
+  .card {
+    min-width: 22rem;
+  }
 
 }
+@media (min-width: 820px) {
+  .card {
+    min-width: 45rem;
+  }
+}
+
 /* CREATE */
 
 .crbutton {
