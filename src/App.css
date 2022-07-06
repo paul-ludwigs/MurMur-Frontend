@@ -31,15 +31,6 @@ form {
   background-color: rgba(255, 255, 255, 0.678);
 }
 
-.plane {
-  background: url(https://i.giphy.com/media/IdmhVqdlIvpj3EalKg/giphy.webp);
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  padding: 20px;
-  background-attachment: fixed;
-  width: auto;
-  height: auto;
-}
 
 /* Wird diese Klasse überhaupt benutzt??? */
 .register {
