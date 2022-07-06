@@ -104,7 +104,7 @@ console.log(image)
       function statusCheck(res) {
         if (res.status === 201) {
           toast("Thanks for sharing! Your MurMur has been created!", {
-            // onClose: () => window.location.reload(),
+            onClose: () => window.location.reload(),
           });
         } else {
           toast(
