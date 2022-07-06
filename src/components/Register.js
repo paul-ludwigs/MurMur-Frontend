@@ -3,8 +3,8 @@ import axios from "axios";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Register() {
   const api = process.env.REACT_APP_API_URL;
@@ -48,20 +48,15 @@ function Register() {
 
   return (
     <>
-    <ToastContainer />
+      <ToastContainer />
       <div className="container-md text-center">
         <div className="row my-3">
           <div className="col-sm-12">
-          <div className="text-center">
-        <h1 className="greeting-font">
-            Register
-          </h1>
-          </div>
-            
-          <div className="plane">
-            <div
-              className="d-flex justify-content-center my-2 transparent-bg mb-3 "              
-            >
+            <div className="text-center">
+              <h1 className="greeting-font">Register</h1>
+            </div>
+
+            <div className="d-flex justify-content-center my-2 transparent-bg mb-3 ">
               <form onSubmit={handleSubmit} className="mt-5 mb-3">
                 <div className="text-center mb-3 row">
                   <label
@@ -174,7 +169,6 @@ function Register() {
             </div>
           </div>
         </div>
-      </div>
       </div>
     </>
   );
