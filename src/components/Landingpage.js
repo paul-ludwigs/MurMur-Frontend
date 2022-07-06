@@ -172,7 +172,7 @@ const Landingpage = () => {
                 style={{ width: "18rem", margin: "1.5rem auto" }}
               >
                 <img
-                  src={require("../images/Cola.JPG")}
+                  src={require("../images/Drink.JPG")}
                   className="card-img-top"
                   alt="Cola"
                 />
@@ -180,10 +180,7 @@ const Landingpage = () => {
                   <h5 className="card-title">Milano</h5>
 
                   <p className="card-text">
-                    If you dont want to pay more than 8€ for a softdrink than
-                    you should not go to a bar in Milano Centrale. There are
-                    cheap places outside the city, but you have to know where
-                    they are.
+                  If you dont want to pay more than is acceptable for a drink than you should not go to a bar in Milano Centrale. There are cheaper places outside the city, but you have to know where they are.🥵.
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -196,7 +193,7 @@ const Landingpage = () => {
                     </svg>
                   </p>
 
-                  <Link to={`#`} className="btn">
+                  <Link to={`/search/tokyo/62c556cf4e755b1944db9d19`} className="btn">
                     Select
                   </Link>
                 </div>
