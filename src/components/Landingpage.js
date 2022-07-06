@@ -136,7 +136,7 @@ const Landingpage = () => {
                 style={{ width: "18rem", margin: "1.5rem auto" }}
               >
                 <img
-                  src={require("../images/istanbul.JPG")}
+                  src={require("../images/Istanbul.JPG")}
                   className="card-img-top"
                   alt="Istanbul"
                 />
