@@ -76,6 +76,13 @@ function Detail() {
     fetching();
   }, [api, id, userName]);
 
+  /*Get the whished date format DD-MM-YYYY*/
+  const getDateFormat = (articleDate) => {
+    const myDateArray = articleDate.slice(0, 10);
+    const newDateFormat = myDateArray.split("-").reverse().join(".");
+    return newDateFormat;
+  };
+
   const handleUpvote = function (event) {
     if (!isAuthenticated) {
       toast("You can only vote if you're logged in!");
@@ -160,7 +167,7 @@ function Detail() {
 
                 <div className="row justify-content-center mt-5">
                   <div className="col-sm-12 text-center">
-                    <p>{murmur.date.slice(0,10).replaceAll( "-" , ".")}</p>
+                    <p>{getDateFormat(murmur.date)}</p>
                     
                   </div>
                   {murmur.picture && (
@@ -187,7 +194,7 @@ function Detail() {
                   ))}
                 </div>
                 <div className="row mt-5 justify-content-center">
-                  <div className="col-10 col-md-8 col-xl-6 murmur-text">
+                  <div className="col-10 col-md-8 col-xl-6">
                     <p>{murmur.tip}</p>
                   </div>
                 </div>

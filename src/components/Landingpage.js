@@ -10,6 +10,7 @@ const Landingpage = () => {
   const api = process.env.REACT_APP_API_URL;
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
 
+  //Submit for login form
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -24,7 +25,7 @@ const Landingpage = () => {
     } else {
       try {
         const res = await axios.post(`${api}/users/login`, loginData);
-        
+
         const token = res.headers.authorization;
         localStorage.setItem("token", token);
         setIsAuthenticated(true);
@@ -41,9 +42,10 @@ const Landingpage = () => {
     <>
       <ToastContainer />
       <div className="container mx-auto text-center mt-2">
-      <h1 className="px-2 mb-4 greeting-font">Hello and Welcome to MurMur!</h1>
+        <h1 className="px-2 mb-4 greeting-font">
+          Hello and Welcome to MurMur!
+        </h1>
         <div className="transparent-bg mt-3">
-          
           <h4 className="mb-3">We're so happy to have you!</h4>
           <p className="px-2">
             Are you looking to plan your next vacation, trip, adventure? Maybe
@@ -231,21 +233,25 @@ const Landingpage = () => {
           <h2 className="px-2 py-2">What MurMur has got to offer:</h2>
         </div>
 
-       {/* second carousel */}
+        {/* second carousel */}
 
-      <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
-        <div className="carousel-inner" data-interval="500">
-          <div class="carousel-item active my-3">      
-              <p className="carousel-onlytxt text-center py-4">8400+ MurMurs</p>      
-          </div>
-          <div className="carousel-item  my-3">
-            <p className="carousel-onlytxt py-4">1250+ Cities</p>
-          </div>
-          <div className="carousel-item  my-3">
-            <p className="carousel-onlytxt py-4">14.300+ User</p>
+        <div
+          id="carouselExampleSlidesOnly"
+          className="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div className="carousel-inner" data-interval="500">
+            <div class="carousel-item active my-3">
+              <p className="carousel-onlytxt text-center py-4">8400+ MurMurs</p>
+            </div>
+            <div className="carousel-item  my-3">
+              <p className="carousel-onlytxt py-4">1250+ Cities</p>
+            </div>
+            <div className="carousel-item  my-3">
+              <p className="carousel-onlytxt py-4">14.300+ User</p>
+            </div>
           </div>
         </div>
-      </div>
 
         <div className="transparent-bg">
           <h2 className="px-2 pt-2">
@@ -346,21 +352,18 @@ const Landingpage = () => {
               <h5 className="mt-3">Let's log you in, shall we?</h5>
 
               {/* Form */}
-              <form onSubmit={handleSubmit} id="loginformular" >
-                <div className="mb-2 row mt-3 mx-auto" style={{ width: "75%"}}>
-                  
+              <form onSubmit={handleSubmit} id="loginformular">
+                <div className="mb-2 row mt-3 mx-auto" style={{ width: "75%" }}>
                   <div className="col-sm-10">
                     <input
                       type="email"
                       className="form-control"
                       id="staticEmail"
                       placeholder="email@example.com"
-                      
                     />
                   </div>
                 </div>
-                <div className="mb-3 row mx-auto" style={{ width: "75%"}}>
-                  
+                <div className="mb-3 row mx-auto" style={{ width: "75%" }}>
                   <div className="col-sm-10">
                     <input
                       type="password"
@@ -371,7 +374,11 @@ const Landingpage = () => {
                   </div>
                 </div>
 
-                <button type="submit" className="btn btn-info mb-3 mt-3 mx-auto" style={{ width: "25%"}}>
+                <button
+                  type="submit"
+                  className="btn btn-info mb-3 mt-3 mx-auto"
+                  style={{ width: "25%" }}
+                >
                   Sign-In
                 </button>
               </form>
