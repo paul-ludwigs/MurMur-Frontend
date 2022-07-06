@@ -194,7 +194,7 @@ function Detail() {
                   ))}
                 </div>
                 <div className="row mt-5 justify-content-center">
-                  <div className="col-10 col-md-8 col-xl-6 murmur-text">
+                  <div className="col-10 col-md-8 col-xl-6">
                     <p>{murmur.tip}</p>
                   </div>
                 </div>
