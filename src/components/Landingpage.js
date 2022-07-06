@@ -172,7 +172,7 @@ const Landingpage = () => {
                 style={{ width: "18rem", margin: "1.5rem auto" }}
               >
                 <img
-                  src={require("../images/Drink.JPG")}
+                  src={require("../images/Drink.jpg")}
                   className="card-img-top"
                   alt="Cola"
                 />
